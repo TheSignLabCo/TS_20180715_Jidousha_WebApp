@@ -10,11 +10,25 @@ import App from "./App";
 import router from "./router";
 import store from "./store/index";
 
+import "vue-googlemaps/dist/vue-googlemaps.css";
+import VueGoogleMaps from "vue-googlemaps";
+
 Vue.config.productionTip = false;
 
 Vue.use(VueTouch);
 Vue.use(VuePreload);
 Vue.use(Vuex);
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    // Google API key
+    apiKey: "AIzaSyD9GYBR1X36wkFZp8oziec9vkTm2vy3Ifw",
+    // Enable more Google Maps libraries here
+    libraries: ["places"],
+    // Use new renderer
+    useBetaRenderer: false
+  }
+});
 
 /* eslint-disable no-new */
 new Vue({

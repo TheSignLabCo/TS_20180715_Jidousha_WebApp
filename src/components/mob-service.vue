@@ -27,6 +27,10 @@
        <as-step-time></as-step-time>
     </div>
 
+    <div class="step-view" v-if="getStep() == 'place'">
+       <as-step-place></as-step-place>
+    </div>
+
     </div>
 
   </div>
@@ -47,7 +51,8 @@ export default {
   components: {
     "as-step-type": viewType,
     "as-step-terms": viewTerms,
-    "as-step-time": viewTime
+    "as-step-time": viewTime,
+    "as-step-place": viewPlace
   },
   data() {
     return {

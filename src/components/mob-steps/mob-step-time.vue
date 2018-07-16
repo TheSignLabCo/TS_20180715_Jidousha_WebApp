@@ -25,17 +25,16 @@
         <span class="picker-title">DIA</span>
           <select v-model="time.day">
           <option v-for="option in options.days[time.month]" v-bind:value="option">
-            {{ option}}
+            {{ option + 1}}
           </option>
           </select>
       </div>
       <div class="hour-picker">
         <span class="picker-title">HORA</span>
           <select v-model="time.hour">
-          <option disabled value="">{{time.hour}}</option>
-          <option>A</option>
-          <option>B</option>
-          <option>C</option>
+          <option v-for="option in options.hours" v-bind:value="option">
+            {{ option + 1}}
+          </option>
           </select>
       </div>
     </div>
@@ -72,7 +71,7 @@ export default {
           Array.from(new Array(30), (val, index) => index),
           Array.from(new Array(31), (val, index) => index)
         ],
-        hours: [0, 2, 2]
+        hours: Array.from(new Array(23), (val, index) => index)
       },
       months: [
         "Enero",
@@ -102,6 +101,19 @@ export default {
     },
     setSelectTime(opt) {
       this.selected = opt;
+      if (opt == "now") {
+        var d = new Date();
+        var n = d.getMonth();
+        var dd = (d.getDate() < 10 ? "0" : "") + d.getDate();
+        var dh = d.getHours();
+        window.console.log(d);
+        window.console.log(n);
+        window.console.log(dd);
+        window.console.log(dh);
+        this.time.month = n;
+        this.time.hour = dh - 1;
+        this.time.day = dd - 1;
+      }
     },
     prevMonth() {
       let tempTime = this.time.month - 1;
