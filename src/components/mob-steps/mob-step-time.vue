@@ -22,24 +22,27 @@
     </v-touch>
     <div class="dayAndHour-picker">
       <div class="day-picker">
-        <span class="title">DIA</span>
-          <select v-model="hour">
-          <option disabled value="">{{'15'}}</option>
-          <option>A</option>
-          <option>B</option>
-          <option>C</option>
+        <span class="picker-title">DIA</span>
+          <select v-model="time.day">
+          <option v-for="option in options.days[time.month]" v-bind:value="option">
+            {{ option}}
+          </option>
           </select>
       </div>
       <div class="hour-picker">
-        <span class="title">HORA</span>
-          <select v-model="hour">
-          <option disabled value="">{{'7:00 am'}}</option>
+        <span class="picker-title">HORA</span>
+          <select v-model="time.hour">
+          <option disabled value="">{{time.hour}}</option>
           <option>A</option>
           <option>B</option>
           <option>C</option>
           </select>
       </div>
     </div>
+    <div class="button-group">
+ <button class="button" @click="setStep('terms')">Volver</button>
+ <button class="button" @click="setStep('place')">Siguiente</button>
+ </div>
   </div>
 </template>
 
@@ -53,6 +56,23 @@ export default {
       selected: "now",
       time: {
         month: 0
+      },
+      options: {
+        days: [
+          Array.from(new Array(31), (val, index) => index),
+          Array.from(new Array(28), (val, index) => index),
+          Array.from(new Array(31), (val, index) => index),
+          Array.from(new Array(30), (val, index) => index),
+          Array.from(new Array(31), (val, index) => index),
+          Array.from(new Array(30), (val, index) => index),
+          Array.from(new Array(31), (val, index) => index),
+          Array.from(new Array(31), (val, index) => index),
+          Array.from(new Array(30), (val, index) => index),
+          Array.from(new Array(31), (val, index) => index),
+          Array.from(new Array(30), (val, index) => index),
+          Array.from(new Array(31), (val, index) => index)
+        ],
+        hours: [0, 2, 2]
       },
       months: [
         "Enero",
@@ -76,6 +96,10 @@ export default {
     this.time.month = n;
   },
   methods: {
+    setStep(step) {
+      let self = this;
+      self.$store.dispatch("update_serviceStep", step);
+    },
     setSelectTime(opt) {
       this.selected = opt;
     },
@@ -126,6 +150,29 @@ export default {
     img {
       height: 5vw;
     }
+  }
+}
+.dayAndHour-picker {
+  .displayRowExpand();
+  select {
+    background-color: white;
+    border: none;
+  }
+}
+.day-picker {
+  display: inline-block;
+  width: 50%;
+  .displayColumnCenter();
+  .picker-title {
+    font-family: "font-light";
+  }
+}
+.hour-picker {
+  display: inline-block;
+  width: 50%;
+  .displayColumnCenter();
+  .picker-title {
+    font-family: "font-light";
   }
 }
 </style>
