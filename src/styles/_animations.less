@@ -1,0 +1,38 @@
+/* Enter and leave animations can use different */
+/* durations and timing functions.              */
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all 1.2s cubic-bezier(.43,-0.23,.67,1.21);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateY(-100vh);
+  opacity: 1;
+}
+
+.slide-left-leave-active,
+.slide-left-enter-active {
+  transition: all 0.5s ease;
+}
+.slide-left-enter {
+  transform: translate(-100%, 0);
+}
+.slide-left-leave-to {
+  transform: translate(-100%, 0);
+}
+
+.slide-right-leave-active,
+.slide-right-enter-active {
+  transition: 0.5s;
+  transition: all 0.5s ease;
+}
+.slide-right-enter {
+  transform: translate(-100%, 0);
+  opacity: 1;
+}
+.slide-right-leave-to {
+  transform: translate(-100%, 0);
+  opacity: 1;
+}

@@ -1,0 +1,96 @@
+// ------------------------------------------------- //
+// -- Theme Stylesheet LESS for AutoStudio-cr.com -- //
+// ------------------------------------------------- //
+// ------------------------------------------------- //
+// -- Main Colors ---------------------------------- //
+// ------------------------------------------------- //
+@color-white : #fff;
+@color-blue: #182b7e;
+@color-red : #FD0544;
+@color-gray : #E5E5E5;
+@color-dark-gray : #999999;
+@color-black : #fff;
+@color-yellow : #FBCD04;
+@color-black: #363636;
+// ------------------------------------------------- //
+// ------------------------------------------------- //
+// -- Views Theme ---------------------------------- //
+// ------------------------------------------------- //
+.view {
+  background-color: @color-gray;
+  width: 100vw;
+  height: 100vh;
+  .flex-centerAll();
+}
+
+// ------------------------------------------------- //
+// Forms Elements (BUTTONS, INPUTS, ETC)
+// ------------------------------------------------- //
+.title {
+  width: fit-content;
+  height: fit-content;
+  display: block;
+  font-family: "font-light";
+  font-size: 1em;
+  background-color: @color-white;
+  border: 0.1em solid @color-gray;
+  border-radius: 1em;
+  margin: 1em auto;
+  padding: 0.5em 2em;
+}
+
+.subtitle {
+}
+
+.button {
+  text-transform: capitalize;
+  font-size: 0.8em;
+  background-color: @color-red;
+  color: @color-white;
+  display: block;
+  font-family: "font-light";
+  border: none;
+  border: 0.1em solid @color-red;
+  border-radius: 1.25em;
+  padding: 0.25em 1.25em;
+  margin: 0.25em;
+  width: fit-content;
+}
+
+.list {
+}
+
+.list-item {
+}
+
+.card {
+  display: block;
+  margin: 1em 0em;
+  img {
+    display: block;
+    width: 15vh;
+    margin: 0 auto;
+  }
+  button {
+    margin: 0 auto;
+  }
+  &:last-child {
+    padding-bottom: 5vh;
+  }
+}
+
+.card-list {
+  width: 100%;
+  min-height: fit-content;
+  height: calc(70vh - 12.5vw);
+  display: block;
+  .displayColumnExpand();
+}
+
+.tab-header {
+}
+
+.tab-content {
+}
+
+// ------------------------------------------------- //
