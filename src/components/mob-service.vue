@@ -15,16 +15,16 @@
     <!-- /Header : Menu de iconos de servicios -->
     <div class="content">
 
-    <div class="step-view">
+    <div class="step-view" v-if="getStep() == 'type'">
        <as-step-type></as-step-type>
     </div>
 
-    <div class="step-view">
-       <as-step-type></as-step-type>
+    <div class="step-view" v-if="getStep() == 'terms'">
+       <as-step-terms></as-step-terms>
     </div>
 
-    <div class="step-view">
-       <as-step-type></as-step-type>
+    <div class="step-view" v-if="getStep() == 'time'">
+       <as-step-time></as-step-time>
     </div>
 
     </div>
@@ -45,7 +45,9 @@ import viewPlace from "./mob-steps/mob-step-place";
 export default {
   name: "mob-service",
   components: {
-    "as-step-type": viewType
+    "as-step-type": viewType,
+    "as-step-terms": viewTerms,
+    "as-step-time": viewTime
   },
   data() {
     return {
@@ -85,6 +87,9 @@ export default {
         this.icons[k].status = "default";
       }
       this.icons[x].status = "active";
+    },
+    getStep: function() {
+      return this.$store.getters["getStep"];
     }
   }
 };
