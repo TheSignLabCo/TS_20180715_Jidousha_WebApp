@@ -8,7 +8,7 @@ const VuexModel = {
       type: "camanances",
       hour: null,
       place: null,
-      payment: null,
+      payment: "cash",
       adviser: null
     }
   }

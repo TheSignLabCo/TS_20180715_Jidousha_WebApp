@@ -39,9 +39,9 @@
       </div>
     </div>
     <div class="button-group">
- <button class="button" @click="setStep('terms')">Volver</button>
- <button class="button" @click="setStep('place')">Siguiente</button>
- </div>
+      <button class="button" @click="setStep('terms')">Volver</button>
+      <button class="button" @click="setStep('place')">Siguiente</button>
+    </div>
   </div>
 </template>
 
@@ -97,6 +97,7 @@ export default {
   methods: {
     setStep(step) {
       let self = this;
+      self.$store.dispatch("update_serviceStep", step);
       self.$store.dispatch("update_serviceStep", step);
     },
     setSelectTime(opt) {

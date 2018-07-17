@@ -9,6 +9,9 @@ const VuexGetters = {
   getTypeOfService: (state, getters) => {
     return state.navigation.service.type;
   },
+  getTypeOfPayment: (state, getters) => {
+    return state.navigation.service.payment;
+  },
   getNavigation: state => state.navigation.navbar.currentTab
 };
 

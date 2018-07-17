@@ -31,6 +31,14 @@
        <as-step-place></as-step-place>
     </div>
 
+    <div class="step-view" v-if="getStep() == 'payment'">
+       <as-step-payment></as-step-payment>
+    </div>
+
+    <div class="step-view" v-if="getStep() == 'confirm'">
+       <as-step-confirm></as-step-confirm>
+    </div>
+
     </div>
 
   </div>
@@ -44,6 +52,8 @@ import viewType from "./mob-steps/mob-step-type";
 import viewTerms from "./mob-steps/mob-step-terms";
 import viewTime from "./mob-steps/mob-step-time";
 import viewPlace from "./mob-steps/mob-step-place";
+import viewPayment from "./mob-steps/mob-step-payment";
+import viewConfirm from "./mob-steps/mob-step-confirm";
 
 // main vue component
 export default {
@@ -52,7 +62,9 @@ export default {
     "as-step-type": viewType,
     "as-step-terms": viewTerms,
     "as-step-time": viewTime,
-    "as-step-place": viewPlace
+    "as-step-place": viewPlace,
+    "as-step-payment": viewPayment,
+    "as-step-confirm": viewConfirm
   },
   data() {
     return {
