@@ -18,10 +18,12 @@ import { VueAuthenticate } from "vue-authenticate";
 import axios from "axios";
 
 import FBSignInButton from "vue-facebook-signin-button";
-
+import GSignInButton from "vue-google-signin-button";
 Vue.config.productionTip = false;
 
 Vue.use(FBSignInButton);
+Vue.use(GSignInButton);
+
 Vue.use(VueTouch);
 Vue.use(VuePreload);
 Vue.use(Vuex);

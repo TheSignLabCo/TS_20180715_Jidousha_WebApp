@@ -2,18 +2,21 @@
   <div class="wrapper">
 
     <div class="section login">
-              <fb-signin-button
-    :params="fbSignInParams"
-    @success="onSignInSuccess"
-    @error="onSignInError">
-    Sign in with Facebook
-  </fb-signin-button>
-   <facebook-login class="button"
-      appId="839473029579421"
-      @login="getUserData"
-      @logout="onLogout"
-      @get-initial-status="getUserData">
-    </facebook-login>
+
+        <fb-signin-button
+        :params="fbSignInParams"
+        @success="onFSignInSuccess"
+        @error="onFSignInError">
+        Continua con Facebook
+        </fb-signin-button>
+
+        <g-signin-button
+        :params="googleSignInParams"
+        @success="onGSignInSuccess"
+        @error="onGSignInError">
+        Continua con Google
+        </g-signin-button>
+
 
     </div>
     <div class="section profile">
@@ -34,6 +37,10 @@ export default {
       fbSignInParams: {
         scope: "email",
         return_scopes: true
+      },
+      googleSignInParams: {
+        client_id:
+          "92300082371-ranqtopes13nqbolp0inrrqp4tdb4a5d.apps.googleusercontent.com"
       }
     };
   },
@@ -50,17 +57,23 @@ export default {
     login() {
       this.$store.dispatch("update_auth", { user, requestOptions });
     },
-    getUserData(data) {
-      console.log(data);
-    },
-    onLogout() {},
-    onSignInSuccess(response) {
+    onFSignInSuccess(response) {
       FB.api("/me", dude => {
         console.log(`Good to see you, ${dude.name}.`);
       });
     },
-    onSignInError(error) {
+    onFSignInError(error) {
       console.log("OH NOES an errro", error);
+    },
+    onGSignInSuccess(googleUser) {
+      // `googleUser` is the GoogleUser object that represents the just-signed-in user.
+      // See https://developers.google.com/identity/sign-in/web/reference#users
+      const profile = googleUser.getBasicProfile(); // etc etc
+      console.log(profile);
+    },
+    onGSignInError(error) {
+      // `error` contains any error occurred.
+      console.log("OH NOES", error);
     }
   }
 };
@@ -89,5 +102,14 @@ export default {
   border-radius: 3px;
   background-color: #4267b2;
   color: #fff;
+}
+.g-signin-button {
+  /* This is where you control how the button looks. Be creative! */
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 3px;
+  background-color: #3c82f7;
+  color: #fff;
+  box-shadow: 0 3px 0 #0f69ff;
 }
 </style>
