@@ -32,7 +32,7 @@ export default {
   data() {
     return {
       fbSignInParams: {
-        scope: "email,user_likes",
+        scope: "email",
         return_scopes: true
       }
     };
