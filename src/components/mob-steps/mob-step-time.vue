@@ -98,7 +98,6 @@ export default {
     setStep(step) {
       let self = this;
       self.$store.dispatch("update_serviceStep", step);
-      self.$store.dispatch("update_serviceStep", step);
     },
     setSelectTime(opt) {
       this.selected = opt;
@@ -142,7 +141,7 @@ export default {
 .wrapper {
   .displayColumnCenter();
   width: 100%;
-  height: @view-height;
+  height: @view-content-h;
   display: block;
   overflow: scroll;
 }

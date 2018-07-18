@@ -19,6 +19,9 @@ const VuexMutations = {
   },
   UPDATE_SERVICE_ADVISER(state, stepAdviser) {
     state.navigation.service.adviser = stepAdviser;
+  },
+  UPDATE_AUTH(state, payload) {
+    state.isAuthenticated = payload.isAuthenticated;
   }
 };
 

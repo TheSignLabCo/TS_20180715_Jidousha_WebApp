@@ -38,7 +38,7 @@ export default {
 .wrapper {
   .displayColumnCenter();
   width: 100%;
-  height: @view-height;
+  height: @view-content-h;
   display: block;
   overflow: scroll;
 }

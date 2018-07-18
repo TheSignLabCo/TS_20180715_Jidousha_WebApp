@@ -1,4 +1,8 @@
 const VuexModel = {
+  // You can use it as state property
+  state: {
+    isAuthenticated: false
+  },
   navigation: {
     navbar: {
       currentTab: "info"

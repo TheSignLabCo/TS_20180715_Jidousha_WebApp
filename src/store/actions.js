@@ -19,6 +19,13 @@ const VuexActions = {
   },
   update_serviceAdviser({ commit }, serviceAdviser) {
     commit("UPDATE_SERVICE_ADVISER", serviceAdviser);
+  },
+  update_auth(context, payload) {
+    vueAuth.login(payload.user, payload.requestOptions).then(response => {
+      context.commit("UPDATE_AUTH", {
+        isAuthenticated: vueAuth.isAuthenticated()
+      });
+    });
   }
 };
 

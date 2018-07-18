@@ -7,15 +7,54 @@ html {
     color: @color-black;
     background-color: @color-white;
     width: 100vw !important;
-    height: auto;
+    height: 100vh;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 
-@header-h : 7.5vh;
-@header-w : 100vw;
-@nav-h : @header-h;
-@nav-w : @header-w;
-@container-dh : (@header-h + @nav-h);
-@container-h : calc(100vh - 12vw - 12.5vw);
-@container-w : @header-w;
-@view-height: calc(100vh - 12vw - 12.5vw - 21vw);
+//
+@header-h : 20vw;
+@header-w : 100%;
+@footer-h : 20vw;
+//
+@view-h : 100vh - @header-h - @footer-h;
+//
+@view-header-h: 12vw;
+@view-content-h : 20vw;
+@view-footer-h : 20vw;
+// Mixings
+.header() {
+    display: block;
+    width: 100%;
+    height: @header-h;
+}
+
+.footer() {
+    display: block;
+    width: 100%;
+    height: @header-h;
+}
+
+.containerHeaderContentFooter() {
+    display: block;
+    width: 100%;
+    height: calc(@view-h - @view-header-h - @view-footer-h);
+    box-sizing: border-box;
+    padding: 5%;
+}
+
+.containerHeaderContent() {
+    display: block;
+    width: 100%;
+    height: calc(@view-h - @view-header-h);
+    box-sizing: border-box;
+    padding: 5%;
+}
+
+.containerContent() {
+    display: block;
+    width: 100%;
+    height: calc(@view-h);
+    box-sizing: border-box;
+    padding: 5%;
+}

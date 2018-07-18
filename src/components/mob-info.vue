@@ -81,13 +81,14 @@ export default {
 
 <style lang="less" scoped>
 @import (reference) "../styles/main.less";
-@view-h : @container-h;
-@view-tabs-h : 12vw;
-@content-h : calc(@view-h - @view-tabs-h);
+.wrapper {
+  .containerContent();
+  padding: 0%;
+}
 .tabs {
   display: block;
   width: 100vw;
-  height: fit-content;
+  height: @view-header-h;
 
   background-color: @color-gray;
 
@@ -108,6 +109,7 @@ export default {
     text-align: center;
     box-sizing: border-box;
     padding: 3.5% 0%;
+    height: @view-header-h;
     border-bottom: 1px solid rgba(0, 0, 0, 0);
     &.active {
       color: @color-red;
@@ -117,8 +119,11 @@ export default {
 }
 .contents {
   display: block;
+
+  .containerContent();
+  padding: 0%;
+
   width: 200vw;
-  height: @content-h;
 
   .flex-display(flex);
   .flex-direction(row);
@@ -132,18 +137,19 @@ export default {
   -ms-transition: all 500ms ease-in-out;
   -o-transition: all 500ms ease-in-out;
   transition: all 500ms ease-in-out;
+
   .content {
     display: inline-block;
-    width: 100vw;
-    height: @view-h;
     overflow: hidden;
+    .containerHeaderContent();
+    padding: 0%;
   }
 }
 .about .cover {
   display: block;
   background-color: rgba(0, 0, 0, 0);
   width: 100vw;
-  height: 60vw;
+  height: @view-h / 2;
   background-size: cover;
   background-position: center;
   background-image: url("../assets/img/mob-info/car-bg.png");
@@ -166,7 +172,7 @@ export default {
   box-sizing: border-box;
   padding: 0px 10vw;
   width: 100vw;
-  height: calc(100vh - 50vw - 65vw);
+  height: @view-h / 2;
   .flex-display(flex);
   .flex-direction(column);
   .flex-wrap(nowrap);
@@ -185,14 +191,14 @@ export default {
 }
 .contact {
   background-color: white;
-  height: @view-h;
+  height: fit-content;
 }
 ul.contact-info {
   font-size: 4vw;
   width: 100%;
   margin: 0 auto;
   background-color: #f2f2f2;
-  height: calc(@content-h / 2);
+
   box-sizing: border-box;
   position: relative;
   top: -0vh;
@@ -204,7 +210,7 @@ ul.contact-info {
   .justify-content(flex-start);
   .align-content(center);
   .align-items(center);
-
+  height: calc((@view-h - @view-header-h) / 2);
   li {
     margin: 1em;
     padding: 0%;
@@ -226,7 +232,7 @@ ul.contact-info {
   }
 }
 .img-contact-cover {
-  height: calc(@content-h / 2);
+  height: calc((@view-h - @view-header-h) / 2);
   img {
     display: block;
     height: 100%;

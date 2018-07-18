@@ -13,6 +13,10 @@ import store from "./store/index";
 import "vue-googlemaps/dist/vue-googlemaps.css";
 import VueGoogleMaps from "vue-googlemaps";
 
+import VueAxios from "vue-axios";
+import { VueAuthenticate } from "vue-authenticate";
+import axios from "axios";
+
 Vue.config.productionTip = false;
 
 Vue.use(VueTouch);
@@ -30,11 +34,23 @@ Vue.use(VueGoogleMaps, {
   }
 });
 
+Vue.use(VueAxios, axios);
+const vueAuth = new VueAuthenticate(Vue.prototype.$http, {
+  baseUrl: "http://localhost:8080"
+});
+
 /* eslint-disable no-new */
 new Vue({
   el: "#app",
   router,
   template: "<App/>",
   components: { App },
-  store: store
+  store: store,
+  methods: {
+    authenticate: function(provider) {
+      this.$auth.authenticate(provider).then(function() {
+        // Execute application logic after successful social authentication
+      });
+    }
+  }
 });

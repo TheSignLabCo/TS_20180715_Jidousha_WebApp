@@ -13,7 +13,11 @@
     "lint": "eslint --ext .js,.vue src test/e2e/specs"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "facebook-login-vuejs": "^2.1.3",
     "vue": "^2.5.2",
+    "vue-authenticate": "^1.3.4",
+    "vue-axios": "^2.1.2",
     "vue-gesture": "^2.0.0",
     "vue-gestures": "0.0.2",
     "vue-googlemaps": "^0.1.1",

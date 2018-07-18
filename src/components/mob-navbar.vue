@@ -1,7 +1,7 @@
 <template>
 <div class="wrapper">
-  <div class="profile-icon">
-     <img class="icon" src="../assets/img/navbar/profile.png" alt="">
+  <div class="profile-icon" v-bind:class="{ active: $store.state.navigation.navbar.currentTab =='profile'}" @click="updateTab('profile')">
+     <img class="icon" src="../assets/img/navbar/profile.png" alt=""  >
   </div>
   <div class="tabs">
     <div class="tab info" @click="updateTab('info')" v-bind:class="{ active: $store.state.navigation.navbar.currentTab =='info'}">
@@ -39,9 +39,10 @@ export default {
 @import (reference) "../styles/main.less";
 .wrapper {
   height: 100%;
-  width: 100%;
   position: absolute;
   bottom: 0px;
+
+  .footer();
 }
 .profile-icon,
 .tabs {
@@ -78,6 +79,9 @@ export default {
     text-align: center;
     &.active {
       border-bottom: 1px solid @color-red;
+      .icon {
+        border: 1px solid @color-red;
+      }
     }
     .flex-display(flex);
     .flex-direction(column);

@@ -12,6 +12,9 @@ const VuexGetters = {
   getTypeOfPayment: (state, getters) => {
     return state.navigation.service.payment;
   },
+  getAuth() {
+    return vueAuth.isAuthenticated();
+  },
   getNavigation: state => state.navigation.navbar.currentTab
 };
 

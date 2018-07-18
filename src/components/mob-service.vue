@@ -144,7 +144,7 @@ export default {
   display: block;
 
   width: 100%;
-  height: @view-height;
+  height: @view-content-h;
 
   background-color: @color-white;
 }

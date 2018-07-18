@@ -6,7 +6,6 @@
     </div>
 
     <div class="container">
-      <div class="wrapper" >
 
         <div class="section" v-if="this.$store.getters['getNavTab'] == 'info'">
           <mob-info ></mob-info>
@@ -15,13 +14,17 @@
         <div class="section" v-if="this.$store.getters['getNavTab'] == 'service'">
           <mob-service></mob-service>
         </div>
+        
+        <div class="section" v-if="this.$store.getters['getNavTab'] == 'profile'">
+          <mob-profile></mob-profile>
+        </div>
 
-      </div>
     </div>
 
     <div class="navigator">
       <mob-navbar></mob-navbar>
     </div>
+
   </div>
 </template>
 
@@ -32,6 +35,7 @@ import HeaderComponent from "../../components/mob-header.vue";
 import NavbarComponent from "../../components/mob-navbar.vue";
 import InfoComponent from "../../components/mob-info.vue";
 import ServiceComponent from "../../components/mob-service.vue";
+import ProfileComponent from "../../components/mob-profile.vue";
 //console.log(this.$store.getters["getNavTab"]);
 export default {
   name: "vw-home-mobile",
@@ -39,7 +43,8 @@ export default {
     "mob-header": HeaderComponent,
     "mob-navbar": NavbarComponent,
     "mob-info": InfoComponent,
-    "mob-service": ServiceComponent
+    "mob-service": ServiceComponent,
+    "mob-profile": ProfileComponent
   },
   computed: {
     ...mapState(["navigation"]),
@@ -59,29 +64,17 @@ export default {
 }
 
 .header {
-  display: block;
-  height: @header-h;
-  width: @header-w;
+  .header();
 }
 .container {
-  height: @container-h;
-  width: @header-w;
-  overflow: hidden;
-  .wrapper {
-    height: @container-h;
-    height: calc(100vh - 12vw - 12.5vw);
-    width: @header-w;
-    .section {
-      width: @header-w;
-      height: calc(100vh - 12vw - 12.5vw);
-      display: block;
-    }
+  .containerContent();
+  padding: 0%;
+  .section {
+    .containerContent();
+    padding: 0%;
   }
 }
 .navigator {
-  height: fit-content;
-  width: @nav-w;
-  position: fixed;
-  bottom: 0px;
+  .footer();
 }
 </style>
