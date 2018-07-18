@@ -36,7 +36,7 @@
               </div>
 
               <ul class="contact-info">
-                <li> <img src="../assets/img/mob-info/contact-call.png">506 72053596</li>
+                <li> <a href="tel:18475555555"><img src="../assets/img/mob-info/contact-call.png">506 72053596</a> </li>
                 <li> <img src="../assets/img/mob-info/contact-email.png">info@autostudio-cr.com</li>
                 <li> <img src="../assets/img/mob-info/contact-facebook.png">Autostudio </li>
               </ul>

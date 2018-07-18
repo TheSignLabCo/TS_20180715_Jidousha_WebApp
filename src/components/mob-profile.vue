@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
 
-    <div class="section login">
+    <div class="section login" v-if="!isLogged">
 
         <fb-signin-button
         :params="fbSignInParams"
@@ -19,7 +19,7 @@
 
 
     </div>
-    <div class="section profile">
+    <div class="section profile" v-if="isLogged">
 
 
     </div>
@@ -34,6 +34,7 @@ import facebookLogin from "facebook-login-vuejs";
 export default {
   data() {
     return {
+      isLogged: false,
       fbSignInParams: {
         scope: "email",
         return_scopes: true
@@ -82,13 +83,20 @@ export default {
 <style lang="less" scoped>
 @import (reference) "../styles/main.less";
 .wrapper {
-  .displayColumnCenter();
+  .containerContent();
   width: 100%;
   height: calc(@view-h + (@footer-h) / 2);
   display: block;
   overflow: scroll;
 
   background-color: @color-red;
+
+  .flex-display(flex);
+  .flex-direction(column);
+  .flex-wrap(wrap);
+  .justify-content(center);
+  .align-content(center);
+  .align-items(center);
 }
 
 .title {
@@ -97,6 +105,7 @@ export default {
 
 .fb-signin-button {
   /* This is where you control how the button looks. Be creative! */
+  width: 50vw;
   display: inline-block;
   padding: 4px 8px;
   border-radius: 3px;
@@ -105,11 +114,21 @@ export default {
 }
 .g-signin-button {
   /* This is where you control how the button looks. Be creative! */
+  width: 50vw;
   display: inline-block;
   padding: 4px 8px;
   border-radius: 3px;
   background-color: #3c82f7;
   color: #fff;
   box-shadow: 0 3px 0 #0f69ff;
+}
+
+.section {
+  .flex-display(flex);
+  .flex-direction(column);
+  .flex-wrap(wrap);
+  .justify-content(center);
+  .align-content(center);
+  .align-items(center);
 }
 </style>

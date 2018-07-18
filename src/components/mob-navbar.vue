@@ -1,10 +1,10 @@
 <template>
 <div class="wrapper">
   <div class="profile-icon" v-bind:class="{ active: $store.state.navigation.navbar.currentTab =='profile'}" @click="updateTab('profile')">
-     <img class="icon" src="../assets/img/navbar/profile.png" alt=""  >
+     <img class="icon" src="../assets/img/navbar/profile-icon.png" alt=""  v-bind:class="{ active: $store.state.navigation.navbar.currentTab =='profile'}">
   </div>
   <div class="tabs">
-    <div class="tab info" @click="updateTab('info')" v-bind:class="{ active: $store.state.navigation.navbar.currentTab =='info'}">
+    <div class="tab info" @click="updateTab('info')"  v-bind:class="{ active: $store.state.navigation.navbar.currentTab=='info' }">
       <img src="../assets/img/navbar/tab-info-icon-active.png" v-if="$store.state.navigation.navbar.currentTab =='info'">
       <img src="../assets/img/navbar/tab-info-icon-default.png" v-if="$store.state.navigation.navbar.currentTab!='info'">
     </div>
@@ -48,14 +48,26 @@ export default {
 .tabs {
   position: absolute;
   bottom: 0px;
-  height: 12.5vw;
+  height: calc((@footer-h) / 2);
 }
 .profile-icon {
-  height: 25vw;
-  left: calc(50% - 6.5vw);
+  height: calc((@footer-h) / 1);
+  left: calc(50% - 5.5vw);
   z-index: 10;
+
+  .flex-display(flex);
+  .flex-direction(row);
+  .flex-wrap(wrap);
+  .justify-content(center);
+  .align-content(center);
+  .align-items(center);
   img {
-    height: 100%;
+    height: 50%;
+    border: 1px solid @color-gray;
+    border-radius: 100%;
+    &.active {
+      border: 1px solid @color-red;
+    }
   }
 }
 .tabs {
