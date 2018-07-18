@@ -60,7 +60,7 @@ export default {
       });
     },
     onSignInError(error) {
-      console.log("OH NOES", error);
+      console.log("OH NOES an errro", error);
     }
   }
 };
