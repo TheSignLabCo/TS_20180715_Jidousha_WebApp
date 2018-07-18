@@ -35,17 +35,20 @@
   background-color: @color-white;
   border: 0.1em solid @color-gray;
   border-radius: 1em;
-  margin: 1em auto;
+  margin: 0em auto;
+  margin-top: 1em;
   padding: 0.5em 2em;
 }
 
 .subtitle {
 }
+
 .thumb {
-  width: 35%;
+  width: 15vh;
   display: block;
   margin: 0 auto;
 }
+
 .button {
   text-transform: capitalize;
   font-size: 0.8em;
@@ -60,11 +63,23 @@
   margin: 0.25em;
   width: fit-content;
 }
+
 .button-group {
   width: 100%;
   display: block;
   .displayRowCenter();
+  &.fix {
+    position: absolute;
+    bottom: @footer-h;
+    width: 100vw;
+    .button {
+      width: 30%;
+      padding: 0.5em 0em;
+      margin: 0 auto;
+    }
+  }
 }
+
 .footenote {
   font-size: 0.8em;
   font-family: "font-light";
@@ -73,33 +88,43 @@
   position: relative;
   top: 1em;
 }
+
 .disclaimer {
   font-size: 0.8em;
-  font-family: "font-thin";
+  font-family: "font-light";
   text-align: center;
   display: block;
   width: 70%;
   margin: 0 auto;
   color: @color-red;
 }
+
 .list {
   display: block;
   width: 80%;
   margin: 0 auto;
-
   font-family: "font-light";
-
-  padding: 2em 0em;
+  padding: 0em 0em;
+  font-size: 0.8em;
 }
 
 .list-item {
   margin: 1em 0em;
-}
-.list-item:before {
-  content: "\2713";
-  display: inline-block;
-  color: @color-blue;
-  padding: 0 6px 0 0;
+  .tick {
+    width: 1em;
+    height: 1em;
+    background-image: url("/static/img/checkmark.png");
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    margin-right: 0.5em;
+  }
+  p {
+    display: inline-block;
+    width: auto;
+    max-width: calc(100% - 2em);
+  }
 }
 
 .card {
@@ -158,4 +183,5 @@
     color: @color-white;
   }
 }
+
 // ------------------------------------------------- //

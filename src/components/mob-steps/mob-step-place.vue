@@ -24,7 +24,7 @@
 
 
 
-    <div class="button-group">
+    <div class="button-group fix">
       <button class="button" @click="setStep('time')">Volver</button>
       <button class="button" @click="setStep('payment')">Siguiente</button>
     </div>
@@ -105,6 +105,7 @@ export default {
   height: @view-content-h;
   display: block;
   overflow: scroll;
+  height: 100%;
 }
 .map {
   width: 100vw;

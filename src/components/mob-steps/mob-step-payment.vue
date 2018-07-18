@@ -58,6 +58,7 @@ export default {
   height: @view-content-h;
   display: block;
   overflow: scroll;
+  height: 100%;
 }
 .card {
   width: 25vw;

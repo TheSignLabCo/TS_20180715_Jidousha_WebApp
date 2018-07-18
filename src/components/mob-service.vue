@@ -113,13 +113,15 @@ export default {
 </script>
 <style lang="less" scoped>
 @import (reference) "../styles/main.less";
-
+.wrapper {
+  height: calc(@view-h + (@footer-h / 2));
+}
 .header {
   .displayRowExpand();
-  height: 20vw;
+  height: @view-header-h;
   box-sizing: border-box;
   .icon {
-    width: 15%;
+    width: fit-content;
     height: fit-content;
     box-sizing: border-box;
     display: block;
@@ -132,21 +134,29 @@ export default {
     }
     img {
       display: block;
-      margin: 0 auto;
-      width: 75%;
+      margin: 0.1em auto;
+      width: 2em;
     }
     &.active {
       color: @color-red;
     }
   }
 }
+@cfooter : calc(@footer-h/2);
 .content {
   display: block;
 
   width: 100%;
-  height: @view-content-h;
+  height: calc(@view-h + (@footer-h / 2) - @view-header-h);
 
   background-color: @color-white;
+  padding: 0%;
+
+  overflow: hidden;
+}
+
+.step-view {
+  height: 100%;
 }
 </style>
 

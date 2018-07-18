@@ -52,7 +52,8 @@ export default {
 }
 .profile-icon {
   height: calc((@footer-h) / 1);
-  left: calc(50% - 5.5vw);
+  width: 12vw;
+  left: calc(50% - 6vw);
   z-index: 10;
 
   .flex-display(flex);
@@ -62,7 +63,7 @@ export default {
   .align-content(center);
   .align-items(center);
   img {
-    height: 50%;
+    width: 100%;
     border: 1px solid @color-gray;
     border-radius: 100%;
     &.active {
@@ -84,7 +85,7 @@ export default {
     z-index: 5;
     display: inline-block;
     width: 50vw;
-    height: 100%;
+    height: calc(@footer-h / 2);
     box-sizing: border-box;
     background-color: @color-white;
     border: 1px solid @color-gray;

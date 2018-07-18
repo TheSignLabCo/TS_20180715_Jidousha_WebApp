@@ -68,9 +68,11 @@ export default {
 }
 .container {
   .containerContent();
+  height: calc(100% + (@cfooter-h));
   padding: 0%;
   .section {
     .containerContent();
+    height: calc(100% + (@cfooter-h));
     padding: 0%;
   }
 }

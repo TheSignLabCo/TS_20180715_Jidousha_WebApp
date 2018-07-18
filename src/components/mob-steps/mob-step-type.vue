@@ -38,9 +38,14 @@ export default {
 .wrapper {
   .displayColumnCenter();
   width: 100%;
-  height: @view-content-h;
   display: block;
   overflow: scroll;
+  .containerHeaderContent();
+  height: calc(100% + (@footer-h / 2));
+  height: 100%;
+}
+.title {
+  margin: 0 auto;
 }
 </style>
 

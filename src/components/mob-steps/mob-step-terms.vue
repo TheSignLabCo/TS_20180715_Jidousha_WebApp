@@ -9,8 +9,11 @@
    <li class="list-item" v-for="term in getTerms()" v-bind:key="term">
       <span v-html="term"></span>
    </li>
+   <li class="list-item">
+     <span class='footenote'>*con excepción de aluminio o hierro (parachoques de Pick up).</span>
+   </li>
  </ul>
- <div class="button-group">
+ <div class="button-group fix">
  <button class="button" @click="setStep('type')">Volver</button>
  <button class="button" @click="setStep('time')">Siguiente</button>
  </div>
@@ -27,9 +30,9 @@ export default {
     return {
       terms: {
         camanaces: [
-          "El golpe es menor a 10 cm de diámetro.",
-          "El golpe no afecto la pintura del vehículo",
-          "EL golpe fue en cualquier parte metálica del carro*. <br> <span class='footenote'>*con excepción de aluminio o hierro (parachoques de Pick up).</span>"
+          "<div class='tick'></div><p>El golpe es menor a 10 cm de diámetro.</p>",
+          "<div class='tick'></div><p>El golpe no afecto la pintura del vehículo",
+          "<div class='tick'></div><p>EL golpe fue en cualquier parte metálica del carro*. <br> </p>"
         ],
         parabrisas: []
       }
@@ -57,10 +60,12 @@ export default {
 <style lang="less" scoped>
 @import (reference) "../../styles/main.less";
 .wrapper {
-  .displayColumnCenter();
   width: 100%;
   height: @view-content-h;
-  display: block;
   overflow: scroll;
+  .containerHeaderContent();
+  height: calc(100% - 30vw);
+  padding: 0%;
+  .displayColumnEspace();
 }
 </style>

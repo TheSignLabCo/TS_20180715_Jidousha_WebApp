@@ -3,8 +3,8 @@
   <div class="wrapper">
 
     <div class="tabs">
-      <div class="tab" @click="setTab('about')"   v-bind:class="{ 'active': this.tabName == 'about' }">¿Quiénes Somos?</div>
-      <div class="tab" @click="setTab('contact')" v-bind:class="{ 'active': this.tabName == 'contact' }">Contacto</div>
+      <div class="tab" @click="setTab('about')"   v-bind:class="{ 'active': this.tabName == 'about' }"> <span>¿Quiénes Somos?</span></div>
+      <div class="tab" @click="setTab('contact')" v-bind:class="{ 'active': this.tabName == 'contact' }"> <span>Contacto</span></div>
     </div>
 
     <div class="contents" v-bind:style="{ transform: 'translateX(' + tabPosX + ')' }">
@@ -36,10 +36,11 @@
               </div>
 
               <ul class="contact-info">
-                <li> <a href="tel:18475555555"><img src="../assets/img/mob-info/contact-call.png">506 72053596</a> </li>
-                <li> <img src="../assets/img/mob-info/contact-email.png">info@autostudio-cr.com</li>
-                <li> <img src="../assets/img/mob-info/contact-facebook.png">Autostudio </li>
+                <li> <a href="tel:50672053596"><img src="../assets/img/mob-info/contact-call.png">506 72053596</a> </li>
+                <li> <a href="mailto:info@autostudio-cr.com"><img src="../assets/img/mob-info/contact-email.png">info@autostudio-cr.com</a> </li>
+                <li> <a href="https://www.facebook.com/pages/biz/automotive_repair/AutoStudio-1790467927713072/"  target="_blank"><img src="../assets/img/mob-info/contact-facebook.png">Autostudio</a> </li>
               </ul>
+
             </div>
       </v-touch>
 
@@ -111,6 +112,7 @@ export default {
     padding: 3.5% 0%;
     height: @view-header-h;
     border-bottom: 1px solid rgba(0, 0, 0, 0);
+    vertical-align: middle;
     &.active {
       color: @color-red;
       border-bottom: 1px solid @color-red;
@@ -224,6 +226,11 @@ ul.contact-info {
     .justify-content(flex-start);
     .align-content(center);
     .align-items(center);
+    a {
+      width: 100%;
+      color: inherit; /* blue colors for links too */
+      text-decoration: inherit; /* no underline */
+    }
     img {
       display: inline;
       height: 1.5em;

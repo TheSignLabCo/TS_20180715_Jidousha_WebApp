@@ -24,7 +24,8 @@
       <div class="day-picker">
         <span class="picker-title">DIA</span>
           <select v-model="time.day">
-          <option v-for="option in options.days[time.month]" v-bind:value="option">
+            <option v-bind:value="time.day">{{time.day}}</option>
+            <option v-for="option in options.days[time.month]" v-bind:value="option">
             {{ option + 1}}
           </option>
           </select>
@@ -32,13 +33,14 @@
       <div class="hour-picker">
         <span class="picker-title">HORA</span>
           <select v-model="time.hour">
+            <option v-bind:value="time.hour">{{time.hour}}</option>
           <option v-for="option in options.hours" v-bind:value="option">
             {{ option + 1}}
           </option>
           </select>
       </div>
     </div>
-    <div class="button-group">
+    <div class="button-group fix">
       <button class="button" @click="setStep('terms')">Volver</button>
       <button class="button" @click="setStep('place')">Siguiente</button>
     </div>
@@ -93,6 +95,8 @@ export default {
     var d = new Date();
     var n = d.getMonth();
     this.time.month = n;
+    this.time.day = (d.getDate() < 10 ? "0" : "") + d.getDate();
+    this.time.hour = d.getHours();
   },
   methods: {
     setStep(step) {
@@ -144,6 +148,9 @@ export default {
   height: @view-content-h;
   display: block;
   overflow: scroll;
+  .containerHeaderContent();
+  height: 100%;
+  padding: 0%;
 }
 .month-picker {
   background-color: @color-dark-gray;
@@ -169,6 +176,12 @@ export default {
   select {
     background-color: white;
     border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: "";
+    font-family: "font-light";
+    text-align: center;
   }
 }
 .day-picker {
