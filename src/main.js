@@ -17,8 +17,11 @@ import VueAxios from "vue-axios";
 import { VueAuthenticate } from "vue-authenticate";
 import axios from "axios";
 
+import FBSignInButton from "vue-facebook-signin-button";
+
 Vue.config.productionTip = false;
 
+Vue.use(FBSignInButton);
 Vue.use(VueTouch);
 Vue.use(VuePreload);
 Vue.use(Vuex);
@@ -38,6 +41,24 @@ Vue.use(VueAxios, axios);
 const vueAuth = new VueAuthenticate(Vue.prototype.$http, {
   baseUrl: "http://localhost:8080"
 });
+
+window.fbAsyncInit = function() {
+  FB.init({
+    appId: "839473029579421",
+    cookie: true, // enable cookies to allow the server to access the session
+    xfbml: true, // parse social plugins on this page
+    version: "v2.8" // use graph api version 2.8
+  });
+};
+(function(d, s, id) {
+  var js,
+    fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js";
+  fjs.parentNode.insertBefore(js, fjs);
+})(document, "script", "facebook-jssdk");
 
 /* eslint-disable no-new */
 new Vue({

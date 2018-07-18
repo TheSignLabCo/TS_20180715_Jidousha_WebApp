@@ -2,12 +2,19 @@
   <div class="wrapper">
 
     <div class="section login">
+              <fb-signin-button
+    :params="fbSignInParams"
+    @success="onSignInSuccess"
+    @error="onSignInError">
+    Sign in with Facebook
+  </fb-signin-button>
    <facebook-login class="button"
       appId="839473029579421"
       @login="getUserData"
       @logout="onLogout"
       @get-initial-status="getUserData">
     </facebook-login>
+
     </div>
     <div class="section profile">
 
@@ -23,7 +30,12 @@ import facebookLogin from "facebook-login-vuejs";
 
 export default {
   data() {
-    return {};
+    return {
+      fbSignInParams: {
+        scope: "email,user_likes",
+        return_scopes: true
+      }
+    };
   },
   components: {
     facebookLogin
@@ -41,7 +53,15 @@ export default {
     getUserData(data) {
       console.log(data);
     },
-    onLogout() {}
+    onLogout() {},
+    onSignInSuccess(response) {
+      FB.api("/me", dude => {
+        console.log(`Good to see you, ${dude.name}.`);
+      });
+    },
+    onSignInError(error) {
+      console.log("OH NOES", error);
+    }
   }
 };
 </script>
@@ -60,5 +80,14 @@ export default {
 
 .title {
   color: white;
+}
+
+.fb-signin-button {
+  /* This is where you control how the button looks. Be creative! */
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 3px;
+  background-color: #4267b2;
+  color: #fff;
 }
 </style>
