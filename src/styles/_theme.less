@@ -70,8 +70,9 @@
   .displayRowCenter();
   &.fix {
     position: absolute;
-    bottom: @footer-h;
+    bottom: 0.75 * @footer-h;
     width: 100vw;
+    left: 0px;
     .button {
       width: 30%;
       padding: 0.5em 0em;
@@ -90,13 +91,15 @@
 }
 
 .disclaimer {
-  font-size: 0.8em;
+  font-size: 0.65em;
   font-family: "font-light";
   text-align: center;
   display: block;
   width: 70%;
   margin: 0 auto;
   color: @color-red;
+  position: absolute;
+  bottom: 1.25 * @footer-h;
 }
 
 .list {
@@ -109,7 +112,7 @@
 }
 
 .list-item {
-  margin: 1em 0em;
+  margin: 0.85em 0em;
   .tick {
     width: 1em;
     height: 1em;

@@ -110,6 +110,8 @@ export default {
 .map {
   width: 100vw;
   height: 40vh;
+  border: 1px solid @color-gray;
+  border-radius: 100%;
   display: block;
 }
 .search-location {

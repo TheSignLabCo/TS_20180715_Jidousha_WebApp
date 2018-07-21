@@ -62,10 +62,9 @@ export default {
 .wrapper {
   width: 100%;
   height: @view-content-h;
-  overflow: scroll;
+  overflow: hidden;
   .containerHeaderContent();
-  height: calc(100% - 30vw);
-  padding: 0%;
-  .displayColumnEspace();
+  //height: calc(100% - 40vw);
+  .displayColumnTop();
 }
 </style>

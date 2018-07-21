@@ -1,6 +1,6 @@
 <template>
   <div class="step wrapper">
-    <h2 class="title">¿Qué servicio necesitas?</h2>
+    <h2 class="title">Selecciona un servicio</h2>
     <ul class="card-list">
       <li class="card">
         <img src="../../assets/img/mob-service/service/camanance.png">
@@ -39,7 +39,7 @@ export default {
   .displayColumnCenter();
   width: 100%;
   display: block;
-  overflow: scroll;
+  overflow: hidden;
   .containerHeaderContent();
   height: calc(100% + (@footer-h / 2));
   height: 100%;

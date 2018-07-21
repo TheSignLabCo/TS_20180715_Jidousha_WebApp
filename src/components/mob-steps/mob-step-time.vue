@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <h2 class="title"> ¿Cuando necesitaía el servicio?</h2>
+    <h2 class="title">Selecciona una fecha para el servicio</h2>
     <div class="button-group">
       <button class="button big-square " v-bind:class="{ active: selected == 'now' }" @click="setSelectTime('now')">
         <img class="" alt="" src="../../assets/img/mob-service/time/now-w.png" v-if="selected == 'now'">
@@ -73,7 +73,7 @@ export default {
           Array.from(new Array(30), (val, index) => index),
           Array.from(new Array(31), (val, index) => index)
         ],
-        hours: Array.from(new Array(23), (val, index) => index)
+        hours: Array.from(new Array(23), (val, index) => index + ":00")
       },
       months: [
         "Enero",
@@ -149,8 +149,12 @@ export default {
   display: block;
   overflow: scroll;
   .containerHeaderContent();
-  height: 100%;
-  padding: 0%;
+}
+.button-group {
+  .displayRowEspace();
+  .button.big-square {
+    margin: 0em 1em;
+  }
 }
 .month-picker {
   background-color: @color-dark-gray;
@@ -162,6 +166,9 @@ export default {
   text-transform: uppercase;
   font-family: "font-light";
   .displayRowEspace();
+  width: 100vw;
+  position: relative;
+  left: -5vw;
   .prev,
   .next {
     padding: 5%;
