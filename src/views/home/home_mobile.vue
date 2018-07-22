@@ -106,5 +106,7 @@ export default {
 }
 .navigator {
   .footer();
+  position: fixed;
+  bottom: 0px;
 }
 </style>

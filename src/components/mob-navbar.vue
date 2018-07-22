@@ -39,7 +39,7 @@ export default {
 @import (reference) "../styles/main.less";
 .wrapper {
   height: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 0px;
 
   .footer();
