@@ -27,8 +27,9 @@ export default {
   color: @color-white;
   background-color: @color-blue;
   background-image: url(/static/img/app-intro-bg.png);
-  background-size: contain;
+  background-size: cover;
   background-position: center top;
+  background-repeat: no-repeat;
   .flex-display(flex);
   .flex-direction(column);
   .flex-wrap(nowrap);
