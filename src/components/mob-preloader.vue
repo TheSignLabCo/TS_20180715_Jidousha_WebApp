@@ -1,16 +1,13 @@
 <template>
-  <div class="preloader" id="app-preloader">
     <div class="wrapper">
-      <img src="../assets/img/preloader-logo.png" class="logo">
-      <img src="../assets/img/loading.gif" class="spinner">
+      <h1>BIENVENIDO</h1>
     </div>
-  </div>
 </template>
 
 <script>
 export default {
-  name: 'App-Preloader'
-}
+  name: "App-Preloader"
+};
 </script>
 
 <style lang="less" scoped>
@@ -19,30 +16,32 @@ export default {
 // -- PRELOADER STYLES : MOBILE FIRST                -- //
 // ---------------------------------------------------- //
 
-.preloader {
-  display: block;
-
-  position: absolute;
-  top: -20vh;
-  left: 0px;
-
-  width: 100vw;
-  height: 130vh;
-
-  color: @color-white;
-  background-color: @color-blue;
-
-  .flex-centerAll();
-}
-
 .wrapper {
   display: block;
-
-  width: 50vw;
-  height: fit-content;
-  overflow: hidden;
-
-  .flex-centerAll();
+  position: absolute;
+  z-index: 500;
+  top: 0vh;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  color: @color-white;
+  background-color: @color-blue;
+  background-image: url(/static/img/app-intro-bg.png);
+  background-size: contain;
+  background-position: center top;
+  .flex-display(flex);
+  .flex-direction(column);
+  .flex-wrap(nowrap);
+  .justify-content(center);
+  .align-content(center);
+  .align-items(center);
+  h1 {
+    font-family: "font-futura-bold-italic";
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+    z-index: 500;
+  }
 }
 
 .logo {
@@ -52,7 +51,7 @@ export default {
   height: auto;
 }
 
-.spinner{
+.spinner {
   display: block;
 
   margin: 5vw;
