@@ -92,8 +92,9 @@ export default {
 }
 .vw-footer {
   height: @view-footer-height;
-  position: absolute;
+  position: fixed;
   bottom: 0px;
+  top: auto;
   width: 100%;
 }
 </style>
