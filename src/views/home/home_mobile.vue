@@ -9,14 +9,14 @@
   </div>
 
   <div class="view-content" v-if="this.isReady">
-    <div class="device mobile" id="mobile-home">
 
-      <div class="header">
+      <div class="vw-header">
         <mob-header></mob-header>
       </div>
 
-      <div class="container">
+      <div class="vw-container bg-test">
 
+<!--
           <div class="section" v-if="this.$store.getters['getNavTab'] == 'info'">
             <mob-info ></mob-info>
           </div>
@@ -28,14 +28,13 @@
           <div class="section" v-if="this.$store.getters['getNavTab'] == 'profile'">
             <mob-profile></mob-profile>
           </div>
-
+-->
       </div>
 
-      <div class="navigator">
+      <div class="vw-footer">
         <mob-navbar></mob-navbar>
       </div>
 
-    </div>
   </div>
 
 </div>
@@ -85,28 +84,16 @@ export default {
 <style lang="less">
 @import (reference) "../../styles/main.less";
 
-#mobile-home {
-  width: 100vw;
-  height: 100vh;
-  display: block;
+.vw-header {
+  height: @view-header-height;
 }
-
-.header {
-  .header();
+.vw-container {
+  height: @view-container-height;
 }
-.container {
-  .containerContent();
-  height: calc(100% + (@cfooter-h));
-  padding: 0%;
-  .section {
-    .containerContent();
-    height: calc(100% + (@cfooter-h));
-    padding: 0%;
-  }
-}
-.navigator {
-  .footer();
-  position: fixed;
+.vw-footer {
+  height: @view-footer-height;
+  position: absolute;
   bottom: 0px;
+  width: 100%;
 }
 </style>

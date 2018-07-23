@@ -4,12 +4,12 @@
 // -------------------------------------------------- //
 body,
 html {
-    color: @color-black;
-    background-color: @color-white;
-    width: 100vw !important;
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: hidden;
+  color: @color-black;
+  background-color: @color-white;
+  width: 100vw !important;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 //
@@ -25,37 +25,42 @@ html {
 @view-footer-h : 20vw;
 // Mixings
 .header() {
-    display: block;
-    width: 100%;
-    height: @header-h;
+  display: block;
+  width: 100%;
+  height: @header-h;
 }
 
 .footer() {
-    display: block;
-    width: 100%;
-    height: @header-h;
+  display: block;
+  width: 100%;
+  height: @header-h;
 }
 
 .containerHeaderContentFooter() {
-    display: block;
-    width: 100%;
-    height: calc(@view-h - @view-header-h - @view-footer-h);
-    box-sizing: border-box;
-    padding: 5%;
+  display: block;
+  width: 100%;
+  height: calc(@view-h - @view-header-h - @view-footer-h);
+  box-sizing: border-box;
+  padding: 5%;
 }
 
 .containerHeaderContent() {
-    display: block;
-    width: 100%;
-    height: calc(@view-h - @view-header-h);
-    box-sizing: border-box;
-    padding: 5%;
+  display: block;
+  width: 100%;
+  height: calc(@view-h - @view-header-h);
+  box-sizing: border-box;
+  padding: 5%;
 }
 
 .containerContent() {
-    display: block;
-    width: 100%;
-    height: calc(@view-h);
-    box-sizing: border-box;
-    padding: 5%;
+  display: block;
+  width: 100%;
+  height: calc(@view-h);
+  box-sizing: border-box;
+  padding: 5%;
 }
+
+// -------------------------------------- //
+@view-header-height: 12vw;
+@view-footer-height: 12vw;
+@view-container-height: calc(100vh - @view-header-height);
