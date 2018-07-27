@@ -89,11 +89,13 @@ export default {
 }
 .vw-container {
   height: @view-container-height;
+  height: 100%;
+  height: -webkit-fill-available;
 }
 .vw-footer {
   height: @view-footer-height;
   position: fixed;
-  bottom: 0px;
+  bottom: 0;
   top: auto;
   width: 100%;
 }
