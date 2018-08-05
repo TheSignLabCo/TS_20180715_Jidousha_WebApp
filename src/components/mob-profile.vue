@@ -3,24 +3,49 @@
 
     <div class="section login" v-if="!isLogged">
 
+      <img class="profile-default-icon" src="/static/img/mob-profile/login-profile-icon.png">
+
+      <div class="login-button fb">
         <fb-signin-button
         :params="fbSignInParams"
         @success="onFSignInSuccess"
         @error="onFSignInError">
-        Continua con Facebook
+        Login con Facebook
         </fb-signin-button>
-
+      </div>
+      <span style="font-family:'font-light'">
+        - or - 
+      </span>
+      <div class="login-button g">
         <g-signin-button
         :params="googleSignInParams"
         @success="onGSignInSuccess"
         @error="onGSignInError">
-        Continua con Google
+        Login con Google
         </g-signin-button>
-
+      </div>
 
     </div>
     <div class="section profile" v-if="isLogged">
 
+      
+        <!--
+          <div class="top">
+        <img class="" src="">
+        <h3 class="">Nombre</h3>
+      </div>
+      <div class="bottom">
+        <ul class="services">
+          <li class="service">
+            <div class="service-header">
+              <span class="service-header-title">
+              <img class="service-header-icon">
+            </div>
+            <div class="service-content"></div>
+          </li>
+        </ul>
+      </div>
+      -->
 
     </div>
     
@@ -53,7 +78,14 @@ export default {
       return this.$store.getters.getAuth();
     }
   },
-  mounted() {},
+  mounted() {
+    var appProfileToken = localStorage.getItem("autostudio-app-profile");
+    if (appProfileToken) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+  },
   methods: {
     login() {
       this.$store.dispatch("update_auth", { user, requestOptions });
@@ -61,6 +93,7 @@ export default {
     onFSignInSuccess(response) {
       FB.api("/me", dude => {
         console.log(`Good to see you, ${dude.name}.`);
+        localStorage.setItem("autostudio-app-profile", "profile");
       });
     },
     onFSignInError(error) {
@@ -71,6 +104,7 @@ export default {
       // See https://developers.google.com/identity/sign-in/web/reference#users
       const profile = googleUser.getBasicProfile(); // etc etc
       console.log(profile);
+      localStorage.setItem("autostudio-app-profile", "profile");
     },
     onGSignInError(error) {
       // `error` contains any error occurred.
@@ -90,23 +124,31 @@ export default {
   .align-content(center);
   .align-items(center);
   height: 100%;
-  height: calc(
-    100vh - @view-frame-header - @view-frame-header - (@view-frame-footer) / 2
-  );
+  height: calc(100vh - @view-frame-header - @view-frame-header);
+  color: @color-white;
+  background-color: @color-blue;
+  background-image: url("/static/img/mob-profile/login-bg.png");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
 }
 
 .title {
   color: white;
 }
-
+.profile-default-icon {
+  width: 20vw;
+  display: block;
+  margin: 0 auto;
+}
 .fb-signin-button {
   width: 50vw;
   display: inline-block;
   padding: 4px 8px;
   border-radius: 3px;
-  background-color: #4267b2;
   color: #fff;
   margin: 1em auto;
+  text-align: center;
 }
 .g-signin-button {
   width: 50vw;
@@ -114,9 +156,8 @@ export default {
   padding: 4px 8px;
   margin: 1em auto;
   border-radius: 3px;
-  background-color: #3c82f7;
   color: #fff;
-  box-shadow: 0 3px 0 #0f69ff;
+  text-align: center;
 }
 
 .section {
@@ -126,5 +167,19 @@ export default {
   .justify-content(center);
   .align-content(center);
   .align-items(center);
+}
+
+.login-button {
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 0.5em 1.5em;
+  font-family: "font-light";
+  &.fb {
+    background-image: url("/static/img/mob-profile/login-fb-bg.png");
+  }
+  &.g {
+    background-image: url("/static/img/mob-profile/login-g-bg.png");
+  }
 }
 </style>

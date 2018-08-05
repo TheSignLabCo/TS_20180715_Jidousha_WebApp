@@ -12,8 +12,9 @@
       <v-touch @swipeleft="setTab('contact')">
       <div class="content about">
         <div class="cover">
-         <img class="img-car" src="../assets/img/mob-info/car-obj.png">
-        </div>
+         <!--<img class="img-car" src="../assets/img/mob-info/car-and-bg-obj.png">
+       -->
+       </div>
         <div class="description">
           <h1>
             <span class="f-light">SU AUTO</span>
@@ -34,7 +35,7 @@
             <div class="content contact">
 
               <div class="img-contact-cover">
-               <img class="contact-cover" src="../assets/img/mob-info/contact-img.png"  alt="AutoStudio! Con Nosotros">
+               <img class="contact-cover" src="/static/img/mob-info/about-car-and-bg-obj.png"  alt="AutoStudio! Con Nosotros">
               </div>
 
               <ul class="contact-info">
@@ -104,10 +105,9 @@ export default {
 }
 .tab {
   background-color: #f2f2f2;
+  font-size: 3.5vw;
 }
 .cover {
-  background-image: url("/static/img/info-bg-color.png");
-  background-size: cover;
   height: calc(
     (100vh - @view-frame-header - @view-frame-header - @view-frame-footer) / 2
   );
@@ -123,12 +123,18 @@ export default {
     margin: 0 auto;
   }
 }
+.about {
+  background-image: url("/static/img/car-and-bg-obj.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 .description {
   height: calc(
     (100vh - @view-frame-header - @view-frame-header - @view-frame-footer) / 2
   );
   box-sizing: border-box;
   padding: 10%;
+  padding-top: 1em;
   padding-bottom: 0px;
   .flex-display(flex);
   .flex-direction(column);
@@ -146,7 +152,7 @@ export default {
     font-family: "font-light";
     color: @color-black;
     font-size: 4.25vw;
-    padding-top: 1em;
+    padding-top: 0em;
   }
 }
 .img-contact-cover,
@@ -166,5 +172,6 @@ export default {
 }
 .img-contact-cover {
   width: 100%;
+  background-color: #f2f2f2;
 }
 </style>

@@ -90,35 +90,6 @@
   <!-- Todo: only include in production -->
   <!-- <%= htmlWebpackPlugin.options.serviceWorkerLoader %> -->
   <!-- built files will be auto injected -->
-  <script>
-    window.scrollTo(0, 1);
-    var fullscreenEnabled = document.fullscreenEnabled ||
-      document.msFullscreenEnabled ||
-      document.mozFullScreenEnabled ||
-      document.webkitFullscreenEnabled;
-    function makeFullscreen(element) {
-      if (element.requestFullscreen) {
-        element.requestFullscreen();
-      } else if (element.msRequestFullscreen) {
-        element.msRequestFullscreen();
-      } else if (element.mozRequestFullScreen) {
-        element.mozRequestFullScreen();
-      } else if (element.webkitRequestFullscreen) {
-        element.webkitRequestFullscreen();
-      }
-    }
-    function cancelFullscreen() {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      } else if (document.msExitFullscreen) {
-        document.msExitFullscreen();
-      } else if (document.mozCancelFullScreen) {
-        document.mozCancelFullScreen();
-      } else if (document.webkitCancelFullScreen) {
-        document.webkitCancelFullScreen();
-      }
-    }
-  </script>
 </body>
 
 </html>
