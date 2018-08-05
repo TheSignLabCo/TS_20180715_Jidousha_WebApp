@@ -59,6 +59,7 @@ export default {
 
 <style lang="less" scoped>
 @import (reference) "../../styles/main.less";
+/*
 .wrapper {
   width: 100%;
   height: @view-content-h;
@@ -67,4 +68,5 @@ export default {
   //height: calc(100% - 40vw);
   .displayColumnTop();
 }
+*/
 </style>

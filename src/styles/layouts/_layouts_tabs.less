@@ -1,0 +1,39 @@
+.tabs {
+  display: block;
+  width: 100vw;
+  height: @view-frame-header;
+
+  background-color: @color-gray;
+
+  .flex-display(flex);
+  .flex-direction(row);
+  .flex-wrap(wrap);
+  .justify-content(center);
+  .align-content(center);
+  .align-items(center);
+
+  .tab {
+    width: 50%;
+    display: inline-block;
+    font-family: "font-light";
+    font-weight: "100";
+    font-size: 0.75em;
+    color: @color-dark-gray;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 3.5% 0%;
+    height: @view-frame-header;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    vertical-align: middle;
+    .flex-display(flex);
+    .flex-direction(row);
+    .flex-wrap(wrap);
+    .justify-content(center);
+    .align-content(center);
+    .align-items(center);
+    &.active {
+      color: @color-red;
+      border-bottom: 1px solid @color-red;
+    }
+  }
+}

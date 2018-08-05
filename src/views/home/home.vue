@@ -13,24 +13,17 @@
 </template>
 
 <script>
-  import ViewHomeMobileComponent from './home_mobile.vue'
-  import ViewHomeDesktopComponent from './home_desktop.vue'
-  export default {
-    name: 'ViewHome',
-    components: {
-      'vw-home-mobile': ViewHomeMobileComponent,
-      'vw-home-desktop': ViewHomeDesktopComponent
-    }
+import ViewHomeMobileComponent from "./home_mobile.vue";
+import ViewHomeDesktopComponent from "./home_desktop.vue";
+export default {
+  name: "ViewHome",
+  components: {
+    "vw-home-mobile": ViewHomeMobileComponent,
+    "vw-home-desktop": ViewHomeDesktopComponent
   }
+};
 </script>
 
 <style lang="less">
-    @import "../../styles/main.less";
-    // ---------------------------------------------------- //
-    // -- HOME STYLES : MOBILE FIRST                     -- //
-    // ---------------------------------------------------- //
-    .view{
-      display: block;
-    }
-
+@import (reference) "../../styles/main.less";
 </style>

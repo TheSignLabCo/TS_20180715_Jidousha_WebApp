@@ -37,19 +37,15 @@ export default {
 
 <style scoped lang="less">
 @import (reference) "../styles/main.less";
-.wrapper {
-  height: 100%;
 
-  .footer();
-}
 .profile-icon,
 .tabs {
   position: absolute;
   bottom: 0px;
-  height: calc((@footer-h) / 2);
+  height: calc((@view-frame-footer) / 2);
 }
 .profile-icon {
-  height: calc((@footer-h) / 1);
+  height: calc((@view-frame-footer) / 1);
   width: 12vw;
   left: calc(50% - 6vw);
   z-index: 10;
@@ -81,9 +77,10 @@ export default {
 
   .tab {
     z-index: 5;
+    padding: 0px;
     display: inline-block;
     width: 50vw;
-    height: calc(@footer-h / 2);
+    height: calc(@view-frame-footer / 2);
     box-sizing: border-box;
     background-color: @color-white;
     border: 1px solid @color-gray;

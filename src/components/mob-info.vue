@@ -21,7 +21,9 @@
           </h1>
           <p>
             <span class="f-bold">Autostudio</span> le trae el sistema más avanzado
-            de reparación exprés de su auto. Contacte uno de nuestros vehículos y
+            de reparación exprés de su auto. 
+            </p><p>
+            Contacte uno de nuestros vehículos y
             descubra como está de regreso a la calle en tiempo récord.
           </p>
         </div>
@@ -82,169 +84,87 @@ export default {
 
 <style lang="less" scoped>
 @import (reference) "../styles/main.less";
-.wrapper {
-  .containerContent();
-  padding: 0%;
-}
-.tabs {
-  display: block;
-  width: 100vw;
-  height: @view-header-h;
-
-  background-color: @color-gray;
-
+.contents {
+  width: 200vw;
+  height: calc(
+    100vh - @view-frame-header - @view-frame-header - (@view-frame-footer) / 2
+  );
   .flex-display(flex);
   .flex-direction(row);
   .flex-wrap(wrap);
   .justify-content(center);
   .align-content(center);
   .align-items(center);
-
-  .tab {
-    width: 50%;
-    display: inline-block;
-    font-family: "font-light";
-    font-weight: "100";
-    font-size: 0.75em;
-    color: @color-dark-gray;
-    text-align: center;
-    box-sizing: border-box;
-    padding: 3.5% 0%;
-    height: @view-header-h;
-    border-bottom: 1px solid rgba(0, 0, 0, 0);
-    vertical-align: middle;
-    &.active {
-      color: @color-red;
-      border-bottom: 1px solid @color-red;
-    }
-  }
 }
-.contents {
-  display: block;
-
-  .containerContent();
-  padding: 0%;
-
-  width: 200vw;
-
+.content {
+  width: 100vw;
+  height: calc(
+    100vh - @view-frame-header - @view-frame-header - (@view-frame-footer) / 2
+  );
+}
+.tab {
+  background-color: #f2f2f2;
+}
+.cover {
+  background-image: url("/static/img/info-bg-color.png");
+  background-size: cover;
+  height: calc(
+    (100vh - @view-frame-header - @view-frame-header - @view-frame-footer) / 2
+  );
   .flex-display(flex);
   .flex-direction(row);
-  .flex-wrap(nowrap);
+  .flex-wrap(wrap);
   .justify-content(center);
   .align-content(center);
-  .align-items(flex-start);
-
-  -webkit-transition: all 500ms ease-in-out;
-  -moz-transition: all 500ms ease-in-out;
-  -ms-transition: all 500ms ease-in-out;
-  -o-transition: all 500ms ease-in-out;
-  transition: all 500ms ease-in-out;
-
-  .content {
-    display: inline-block;
-    overflow: hidden;
-    .containerHeaderContent();
-    padding: 0%;
-  }
-}
-.about .cover {
-  display: block;
-  background-color: rgba(0, 0, 0, 0);
-  width: 100vw;
-  height: @view-h / 2;
-  background-size: cover;
-  background-position: center;
-  background-image: url("../assets/img/mob-info/car-bg.png");
-
-  .flex-display(flex);
-  .flex-direction(column);
-  .flex-wrap(nowrap);
-  .justify-content(flex-end);
-  .align-content(center);
-  .align-items(center);
-
+  .align-items(flex-end);
   img {
     display: block;
     width: 80%;
+    margin: 0 auto;
   }
 }
 .description {
-  display: block;
-  font-family: "font-light";
+  height: calc(
+    (100vh - @view-frame-header - @view-frame-header - @view-frame-footer) / 2
+  );
   box-sizing: border-box;
-  padding: 0px 10vw;
-  width: 100vw;
-  height: @view-h / 2;
+  padding: 10%;
+  padding-bottom: 0px;
   .flex-display(flex);
   .flex-direction(column);
-  .flex-wrap(nowrap);
-  .justify-content(center);
-  .align-content(center);
-  .align-items(center);
+  .flex-wrap(wrap);
+  .justify-content(space-around);
+  .align-content(flex-start);
+  .align-items(flex-start);
+}
+.description {
   h1 {
     color: @color-red;
-    display: block;
-    font-size: 1.5em;
-    margin: 0.5em 0em;
+    font-size: 7.5vw;
   }
   p {
-    color: @color-black;
-  }
-}
-.contact {
-  background-color: white;
-  height: fit-content;
-}
-ul.contact-info {
-  font-size: 4vw;
-  width: 100%;
-  margin: 0 auto;
-  background-color: #f2f2f2;
-
-  box-sizing: border-box;
-  position: relative;
-  top: -0vh;
-  padding: 5% 5%;
-  border: 0px;
-  .flex-display(flex);
-  .flex-direction(column);
-  .flex-wrap(nowrap);
-  .justify-content(flex-start);
-  .align-content(center);
-  .align-items(center);
-  height: calc((@view-h - @view-header-h) / 2);
-  li {
-    margin: 1em;
-    padding: 0%;
-    width: 100%;
-    border-bottom: 1px solid @color-gray;
-    display: block;
     font-family: "font-light";
-    .flex-display(flex);
-    .flex-direction(row);
-    .flex-wrap(nowrap);
-    .justify-content(flex-start);
-    .align-content(center);
-    .align-items(center);
-    a {
-      width: 100%;
-      color: inherit; /* blue colors for links too */
-      text-decoration: inherit; /* no underline */
-    }
-    img {
-      display: inline;
-      height: 1.5em;
-      margin-right: 5%;
-    }
+    color: @color-black;
+    font-size: 4.25vw;
+    padding-top: 1em;
   }
+}
+.img-contact-cover,
+.contact-info {
+  height: calc(
+    (100vh - @view-frame-header - @view-frame-header - @view-frame-footer) / 2 +
+      (@view-frame-footer / 4)
+  );
+  width: 100%;
+  overflow: hidden;
 }
 .img-contact-cover {
-  height: calc((@view-h - @view-header-h) / 2);
-  img {
-    display: block;
-    height: 100%;
-    min-width: 100vw;
-    object-fit: cover;
-  }
+  width: 100%;
+}
+.contact {
+  background-color: @color-gray;
+}
+.img-contact-cover {
+  width: 100%;
 }
 </style>

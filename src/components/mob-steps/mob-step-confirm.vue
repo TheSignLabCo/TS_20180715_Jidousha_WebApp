@@ -31,6 +31,7 @@ export default {
 
 <style lang="less" scoped>
 @import (reference) "../../styles/main.less";
+/*
 .wrapper {
   .displayColumnCenter();
   width: 100%;
@@ -38,4 +39,5 @@ export default {
   display: block;
   overflow: scroll;
 }
+*/
 </style>

@@ -83,20 +83,16 @@ export default {
 <style lang="less" scoped>
 @import (reference) "../styles/main.less";
 .wrapper {
-  .containerContent();
-  width: 100%;
-  height: calc(@view-h + (@footer-h) / 2);
-  display: block;
-  overflow: scroll;
-
-  background-color: @color-red;
-
   .flex-display(flex);
   .flex-direction(column);
   .flex-wrap(wrap);
   .justify-content(center);
   .align-content(center);
   .align-items(center);
+  height: 100%;
+  height: calc(
+    100vh - @view-frame-header - @view-frame-header - (@view-frame-footer) / 2
+  );
 }
 
 .title {
@@ -104,19 +100,19 @@ export default {
 }
 
 .fb-signin-button {
-  /* This is where you control how the button looks. Be creative! */
   width: 50vw;
   display: inline-block;
   padding: 4px 8px;
   border-radius: 3px;
   background-color: #4267b2;
   color: #fff;
+  margin: 1em auto;
 }
 .g-signin-button {
-  /* This is where you control how the button looks. Be creative! */
   width: 50vw;
   display: inline-block;
   padding: 4px 8px;
+  margin: 1em auto;
   border-radius: 3px;
   background-color: #3c82f7;
   color: #fff;

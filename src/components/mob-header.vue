@@ -19,23 +19,9 @@ export default {
 <style lang="less" scoped>
 @import "../styles/main.less";
 .wrapper {
-  width: 100vw;
-  height: 100%;
-
-  box-sizing: border-box;
-
   padding: 2vh;
-
   background-color: @color-white;
-
   border-bottom: 0.1vw solid @color-dark-gray;
-
-  .flex-display(flex);
-  .flex-direction(row);
-  .flex-wrap(wrap);
-  .justify-content(space-between);
-  .align-content(center);
-  .align-items(center);
 }
 .logo {
   width: 30%;

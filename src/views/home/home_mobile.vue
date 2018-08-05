@@ -14,9 +14,9 @@
         <mob-header></mob-header>
       </div>
 
-      <div class="vw-container bg-test">
+      <div class="vw-container">
+        <div class="wrapper">
 
-<!--
           <div class="section" v-if="this.$store.getters['getNavTab'] == 'info'">
             <mob-info ></mob-info>
           </div>
@@ -28,7 +28,8 @@
           <div class="section" v-if="this.$store.getters['getNavTab'] == 'profile'">
             <mob-profile></mob-profile>
           </div>
--->
+          
+          </div>
       </div>
 
       <div class="vw-footer">
@@ -83,20 +84,4 @@ export default {
 
 <style lang="less">
 @import (reference) "../../styles/main.less";
-
-.vw-header {
-  height: @view-header-height;
-}
-.vw-container {
-  height: @view-container-height;
-  height: 100%;
-  height: -webkit-fill-available;
-}
-.vw-footer {
-  height: @view-footer-height;
-  position: fixed;
-  bottom: 0;
-  top: auto;
-  width: 100%;
-}
 </style>

@@ -3,74 +3,214 @@
 // ------------------------------------------------- //
 .view {
   background-color: @color-gray;
-  width: 100vw;
-  height: 100vh;
-  .flex-centerAll();
+  width: 100%;
+  height: 100%;
+  display: block;
 }
-
 // -------------------------------------------------- //
 // -- Layout Stylesheet LESS for AutoStudio-cr.com -- //
 // -------------------------------------------------- //
+.view {
+  .vw-header {
+    .row-layout();
+    height: @view-frame-header;
+  }
+  .vw-container {
+    height: calc(
+      100vh - @view-frame-header - @view-frame-footer + (@view-frame-footer / 2)
+    );
+    overflow: hidden;
+  }
+  .vw-footer {
+    height: @view-frame-footer;
+    overflow: hidden;
+  }
+}
 // -------------------------------------------------- //
-body,
-html {
-  color: @color-black;
-  background-color: @color-white;
-  width: 100vw !important;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: hidden;
+.contact-cover {
+  width: 100%;
+  display: block;
+}
+.row-layout() {
+  .wrapper {
+    width: 100vw;
+    height: 100%;
+    box-sizing: border-box;
+    .flex-display(flex);
+    .flex-direction(row);
+    .flex-wrap(wrap);
+    .justify-content(space-between);
+    .align-content(center);
+    .align-items(center);
+  }
 }
 
-//
-@header-h : 12vw;
-@header-w : 100%;
-@footer-h : 25vw;
-@cfooter-h : @footer-h/2;
-//
-@view-h : 100vh - @header-h - @footer-h;
-//
-@view-header-h: 15vw;
-@view-content-h : 20vw;
-@view-footer-h : 20vw;
-// Mixings
-.header() {
-  display: block;
-  width: 100%;
-  height: @header-h;
-}
+/*
 
-.footer() {
-  display: block;
-  width: 100%;
-  height: @header-h;
+.wrapper {
+  .containerContent();
+  padding: 0%;
 }
-
-.containerHeaderContentFooter() {
+.tabs {
   display: block;
-  width: 100%;
-  height: calc(@view-h - @view-header-h - @view-footer-h);
+  width: 100vw;
+  height: @view-header-h;
+
+  background-color: @color-gray;
+
+  .flex-display(flex);
+  .flex-direction(row);
+  .flex-wrap(wrap);
+  .justify-content(center);
+  .align-content(center);
+  .align-items(center);
+
+  .tab {
+    width: 50%;
+    display: inline-block;
+    font-family: "font-light";
+    font-weight: "100";
+    font-size: 0.75em;
+    color: @color-dark-gray;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 3.5% 0%;
+    height: @view-header-h;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    vertical-align: middle;
+    &.active {
+      color: @color-red;
+      border-bottom: 1px solid @color-red;
+    }
+  }
+}
+.contents {
+  display: block;
+
+  .containerContent();
+  padding: 0%;
+
+  width: 200vw;
+
+  .flex-display(flex);
+  .flex-direction(row);
+  .flex-wrap(nowrap);
+  .justify-content(center);
+  .align-content(center);
+  .align-items(flex-start);
+
+  -webkit-transition: all 500ms ease-in-out;
+  -moz-transition: all 500ms ease-in-out;
+  -ms-transition: all 500ms ease-in-out;
+  -o-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+
+  .content {
+    display: inline-block;
+    overflow: hidden;
+    .containerHeaderContent();
+    padding: 0%;
+  }
+}
+.about .cover {
+  display: block;
+  background-color: rgba(0, 0, 0, 0);
+  width: 100vw;
+  height: @view-h / 2;
+  background-size: cover;
+  background-position: center;
+  background-image: url("../assets/img/mob-info/car-bg.png");
+
+  .flex-display(flex);
+  .flex-direction(column);
+  .flex-wrap(nowrap);
+  .justify-content(flex-end);
+  .align-content(center);
+  .align-items(center);
+
+  img {
+    display: block;
+    width: 80%;
+  }
+}
+.description {
+  display: block;
+  font-family: "font-light";
   box-sizing: border-box;
-  padding: 5%;
+  padding: 0px 10vw;
+  width: 100vw;
+  height: @view-h / 2;
+  .flex-display(flex);
+  .flex-direction(column);
+  .flex-wrap(nowrap);
+  .justify-content(center);
+  .align-content(center);
+  .align-items(center);
+  h1 {
+    color: @color-red;
+    display: block;
+    font-size: 1.5em;
+    margin: 0.5em 0em;
+  }
+  p {
+    color: @color-black;
+  }
 }
-
-.containerHeaderContent() {
-  display: block;
+.contact {
+  background-color: white;
+  height: fit-content;
+}
+ul.contact-info {
+  font-size: 4vw;
   width: 100%;
-  height: calc(@view-h - @view-header-h);
+  margin: 0 auto;
+  background-color: #f2f2f2;
+
   box-sizing: border-box;
-  padding: 5%;
+  position: relative;
+  top: -0vh;
+  padding: 5% 5%;
+  border: 0px;
+  .flex-display(flex);
+  .flex-direction(column);
+  .flex-wrap(nowrap);
+  .justify-content(flex-start);
+  .align-content(center);
+  .align-items(center);
+  height: calc((@view-h - @view-header-h) / 2);
+  li {
+    margin: 1em;
+    padding: 0%;
+    width: 100%;
+    border-bottom: 1px solid @color-gray;
+    display: block;
+    font-family: "font-light";
+    .flex-display(flex);
+    .flex-direction(row);
+    .flex-wrap(nowrap);
+    .justify-content(flex-start);
+    .align-content(center);
+    .align-items(center);
+    a {
+      width: 100%;
+      color: inherit; 
+      text-decoration: inherit; 
+    }
+    img {
+      display: inline;
+      height: 1.5em;
+      margin-right: 5%;
+    }
+  }
+}
+.img-contact-cover {
+  height: calc((@view-h - @view-header-h) / 2);
+  img {
+    display: block;
+    height: 100%;
+    min-width: 100vw;
+    object-fit: cover;
+  }
 }
 
-.containerContent() {
-  display: block;
-  width: 100%;
-  height: calc(@view-h);
-  box-sizing: border-box;
-  padding: 5%;
-}
-
-// -------------------------------------- //
-@view-header-height: 12vw;
-@view-footer-height: 12vw;
-@view-container-height: calc(100vh - @view-header-height);
+*/

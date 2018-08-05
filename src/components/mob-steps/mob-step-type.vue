@@ -35,6 +35,7 @@ export default {
 
 <style lang="less" scoped>
 @import (reference) "../../styles/main.less";
+/*
 .wrapper {
   .displayColumnCenter();
   width: 100%;
@@ -47,5 +48,6 @@ export default {
 .title {
   margin: 0 auto;
 }
+*/
 </style>
 

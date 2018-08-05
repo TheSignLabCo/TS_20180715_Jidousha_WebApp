@@ -113,6 +113,7 @@ export default {
 </script>
 <style lang="less" scoped>
 @import (reference) "../styles/main.less";
+/*
 .wrapper {
   height: calc(@view-h + (@footer-h / 2));
 }
@@ -158,5 +159,6 @@ export default {
 .step-view {
   height: 100%;
 }
+*/
 </style>
 
