@@ -104,9 +104,9 @@ export default {
       });
       FB.api("/me", { fields: "email" }, function(response) {
         self.email = response.email;
-        self.photo = "http://graph.facebook.com/"+response.id+"/picture?type=normal
+        self.photo =
+          "http://graph.facebook.com/" + response.id + "/picture?type=normal";
       });
-
     },
     onFSignInError(error) {
       console.log("OH NOES an errro", error);
