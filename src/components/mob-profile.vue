@@ -208,5 +208,9 @@ export default {
   .profile {
     border-radius: 100%;
   }
+  h3 {
+    text-align: center;
+    max-width: 80;
+  }
 }
 </style>
