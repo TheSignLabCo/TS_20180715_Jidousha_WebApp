@@ -62,6 +62,7 @@ export default {
       isLogged: false,
       name: "",
       photo: "",
+      email: "",
       fbSignInParams: {
         scope: "email",
         return_scopes: true
