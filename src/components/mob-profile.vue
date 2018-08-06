@@ -29,7 +29,7 @@
     <div class="section profile" v-if="isLogged">
 
       <div class="top">
-      
+      <img v-bind:img="photo">
       <h3 class="">Nombre : {{name}}</h3>
       <h3 class="">Email : {{email}}</h3>
       <h3 class="">Photo : {{photo}}</h3>
@@ -101,14 +101,12 @@ export default {
       self.isLogged = true;
       FB.api("/me", dude => {
         self.name = dude.name;
-        console.log(dude);
       });
       FB.api("/me", { fields: "email" }, function(response) {
         self.email = response.email;
+        self.photo = "http://graph.facebook.com/"+response.id+"/picture?type=normal
       });
-      FB.api("/me", { fields: "photo" }, function(response) {
-        console.log(response);
-      });
+
     },
     onFSignInError(error) {
       console.log("OH NOES an errro", error);
