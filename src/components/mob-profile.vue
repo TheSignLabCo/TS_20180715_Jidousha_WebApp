@@ -29,7 +29,7 @@
     <div class="section profile" v-if="isLogged">
 
       <div class="top">
-      <img :src="photo">
+      <img :src="photo" class="profile">
       <h3 class="">Nombre : {{name}}</h3>
       <h3 class="">Email : {{email}}</h3>
       <h3 class="">Photo : {{photo}}</h3>
@@ -194,6 +194,19 @@ export default {
   }
   &.g {
     background-image: url("/static/img/mob-profile/login-g-bg.png");
+  }
+}
+
+.top {
+  width: 100vw;
+  .flex-display(flex);
+  .flex-direction(column);
+  .flex-wrap(wrap);
+  .justify-content(center);
+  .align-content(center);
+  .align-items(center);
+  .profile {
+    border-radius: 100%;
   }
 }
 </style>
