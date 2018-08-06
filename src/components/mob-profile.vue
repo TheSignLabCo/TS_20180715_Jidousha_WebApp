@@ -91,9 +91,11 @@ export default {
       this.$store.dispatch("update_auth", { user, requestOptions });
     },
     onFSignInSuccess(response) {
+      var self = this;
       FB.api("/me", dude => {
         console.log(`Good to see you, ${dude.name}.`);
         localStorage.setItem("autostudio-app-profile", "profile");
+        self.isLogged = true;
       });
     },
     onFSignInError(error) {
@@ -103,8 +105,10 @@ export default {
       // `googleUser` is the GoogleUser object that represents the just-signed-in user.
       // See https://developers.google.com/identity/sign-in/web/reference#users
       const profile = googleUser.getBasicProfile(); // etc etc
+      var self = this;
       console.log(profile);
       localStorage.setItem("autostudio-app-profile", "profile");
+      self.isLogged = true;
     },
     onGSignInError(error) {
       // `error` contains any error occurred.
