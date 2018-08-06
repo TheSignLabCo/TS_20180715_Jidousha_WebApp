@@ -86,10 +86,10 @@ export default {
   mounted() {
     var appProfileToken = localStorage.getItem("autostudio-app-profile");
     if (appProfileToken) {
-      this.isLogged = true;
       this.name = localStorage.getItem("autostudio-app-name");
       this.email = localStorage.getItem("autostudio-app-email");
       this.photo = localStorage.getItem("autostudio-app-photo");
+      this.isLogged = true;
     } else {
       this.isLogged = false;
     }
