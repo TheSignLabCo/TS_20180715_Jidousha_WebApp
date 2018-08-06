@@ -29,8 +29,10 @@
     <div class="section profile" v-if="isLogged">
 
       <div class="top">
-      <img class="" v-bind:src="photo">
+      
       <h3 class="">Nombre : {{name}}</h3>
+      <h3 class="">Email : {{email}}</h3>
+      <h3 class="">Photo : {{photo}}</h3>
       </div>
 
       <div class="bottom">
