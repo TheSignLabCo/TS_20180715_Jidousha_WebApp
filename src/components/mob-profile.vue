@@ -99,6 +99,7 @@ export default {
         self.isLogged = true;
         self.name = dude.name;
         self.photo_url = dude.photo_url;
+        console.log(dude);
       });
     },
     onFSignInError(error) {
