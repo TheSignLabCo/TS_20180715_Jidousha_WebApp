@@ -142,15 +142,7 @@ export default {
 
 <style lang="less" scoped>
 @import (reference) "../../styles/main.less";
-/*
-.wrapper {
-  .displayColumnCenter();
-  width: 100%;
-  height: @view-content-h;
-  display: block;
-  overflow: scroll;
-  .containerHeaderContent();
-}
+
 .button-group {
   .displayRowEspace();
   .button.big-square {
@@ -208,5 +200,4 @@ export default {
     font-family: "font-light";
   }
 }
-*/
 </style>

@@ -99,15 +99,7 @@ export default {
 
 <style lang="less" scoped>
 @import (reference) "../../styles/main.less";
-/*
-.wrapper {
-  .displayColumnCenter();
-  width: 100%;
-  height: @view-content-h;
-  display: block;
-  overflow: scroll;
-  height: 100%;
-}
+
 .map {
   width: 100vw;
   height: 40vh;
@@ -125,5 +117,4 @@ export default {
   border-radius: 1em;
   font-family: "font-light";
 }
-*/
 </style>

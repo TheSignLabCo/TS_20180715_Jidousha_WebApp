@@ -15,29 +15,29 @@
     <!-- /Header : Menu de iconos de servicios -->
     <div class="content">
 
-    <div class="step-view" v-if="getStep() == 'type'">
-       <as-step-type></as-step-type>
-    </div>
+      <div class="step-view" v-if="getStep() == 'type'">
+        <as-step-type></as-step-type>
+      </div>
 
-    <div class="step-view" v-if="getStep() == 'terms'">
-       <as-step-terms></as-step-terms>
-    </div>
+      <div class="step-view" v-if="getStep() == 'terms'">
+        <as-step-terms></as-step-terms>
+      </div>
 
-    <div class="step-view" v-if="getStep() == 'time'">
-       <as-step-time></as-step-time>
-    </div>
+      <div class="step-view" v-if="getStep() == 'time'">
+        <as-step-time></as-step-time>
+      </div>
 
-    <div class="step-view" v-if="getStep() == 'place'">
-       <as-step-place></as-step-place>
-    </div>
+      <div class="step-view" v-if="getStep() == 'place'">
+        <as-step-place></as-step-place>
+      </div>
 
-    <div class="step-view" v-if="getStep() == 'payment'">
-       <as-step-payment></as-step-payment>
-    </div>
+      <div class="step-view" v-if="getStep() == 'payment'">
+        <as-step-payment></as-step-payment>
+      </div>
 
-    <div class="step-view" v-if="getStep() == 'confirm'">
-       <as-step-confirm></as-step-confirm>
-    </div>
+      <div class="step-view" v-if="getStep() == 'confirm'">
+        <as-step-confirm></as-step-confirm>
+      </div>
 
     </div>
 
@@ -106,6 +106,30 @@ export default {
       this.icons[x].status = "active";
     },
     getStep: function() {
+      if (this.$store.getters["getStep"] == "type") {
+        this.icons[0].status = "active";
+        this.icons[1].status = "default";
+        this.icons[2].status = "default";
+        this.icons[3].status = "default";
+      }
+      if (this.$store.getters["getStep"] == "time") {
+        this.icons[0].status = "active";
+        this.icons[1].status = "active";
+        this.icons[2].status = "default";
+        this.icons[3].status = "default";
+      }
+      if (this.$store.getters["getStep"] == "payment") {
+        this.icons[0].status = "active";
+        this.icons[1].status = "active";
+        this.icons[2].status = "active";
+        this.icons[3].status = "default";
+      }
+      if (this.$store.getters["getStep"] == "confirm") {
+        this.icons[0].status = "active";
+        this.icons[1].status = "active";
+        this.icons[2].status = "active";
+        this.icons[3].status = "active";
+      }
       return this.$store.getters["getStep"];
     }
   }
@@ -113,13 +137,14 @@ export default {
 </script>
 <style lang="less" scoped>
 @import (reference) "../styles/main.less";
-/*
+
 .wrapper {
-  height: calc(@view-h + (@footer-h / 2));
+  height: 100%;
 }
+
 .header {
   .displayRowExpand();
-  height: @view-header-h;
+  height: 100%;
   box-sizing: border-box;
   .icon {
     width: fit-content;
@@ -143,22 +168,18 @@ export default {
     }
   }
 }
-@cfooter : calc(@footer-h/2);
+
 .content {
   display: block;
-
   width: 100%;
-  height: calc(@view-h + (@footer-h / 2) - @view-header-h);
-
+  height: 100%;
   background-color: @color-white;
   padding: 0%;
-
   overflow: hidden;
 }
 
 .step-view {
-  height: 100%;
+  height: @view-frame-height;
 }
-*/
 </style>
 

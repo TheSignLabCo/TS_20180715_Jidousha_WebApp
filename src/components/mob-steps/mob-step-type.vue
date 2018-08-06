@@ -1,5 +1,5 @@
 <template>
-  <div class="step wrapper">
+  <div class="step">
     <h2 class="title">Selecciona un servicio</h2>
     <ul class="card-list">
       <li class="card">

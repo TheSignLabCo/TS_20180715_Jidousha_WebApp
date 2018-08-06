@@ -17,6 +17,7 @@
  <button class="button" @click="setStep('type')">Volver</button>
  <button class="button" @click="setStep('time')">Siguiente</button>
  </div>
+ 
  <span class="disclaimer">Al continuar se aceptan los terminos y condiciones del servicio de reparación de {{getType()}}</span>
   </div>
 </template>

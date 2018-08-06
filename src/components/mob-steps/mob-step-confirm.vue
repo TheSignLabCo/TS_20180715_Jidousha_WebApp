@@ -3,7 +3,7 @@
 
     <h2 class="title"> Confirmar Pago </h2>
     
-    <div class="button-group">
+    <div class="button-group fix">
         <button class="button" @click="setStep('payment')">Volver</button>
         <button class="button" @click="setStep('advisor')">Siguiente</button>
     </div>

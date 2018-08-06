@@ -6,20 +6,21 @@
     <div class="card-list">
 
         <div class="card" v-bind:class="{ active: getPaymentType() == 'cash' }" @click="setPaymentType('cash')">
-            <img src="../../assets/img/mob-service/payment/card.png" class="" alt=""   v-if="getPaymentType() == 'cash'">
-            <img src="../../assets/img/mob-service/payment/card_b.png" class="" alt="" v-if="getPaymentType() != 'cash'">
+            <img src="../../assets/img/mob-service/payment/cash_b.png" class="" alt=""   v-if="getPaymentType() == 'cash'">
+            <img src="../../assets/img/mob-service/payment/cash_b.png" class="" alt="" v-if="getPaymentType() != 'cash'">
             <h2>Efectivo</h2>
         </div>
         <div class="card" v-bind:class="{ active: getPaymentType() == 'card' }" @click="setPaymentType('card')">
-            <img src="../../assets/img/mob-service/payment/cash.png" class="" alt=""   v-if="getPaymentType() == 'card'">
-            <img src="../../assets/img/mob-service/payment/cash_b.png" class="" alt="" v-if="getPaymentType() != 'card'">
+            <img src="../../assets/img/mob-service/payment/card_b.png" class="" alt=""   v-if="getPaymentType() == 'card'">
+            <img src="../../assets/img/mob-service/payment/card_b.png" class="" alt="" v-if="getPaymentType() != 'card'">
             <h2>Tarjeta</h2>
         </div>
 
-        <div class="button-group">
+        <div class="button-group fix">
             <button class="button" @click="setStep('place')">Volver</button>
             <button class="button" @click="setStep('confirm')">Siguiente</button>
         </div>
+        
 
     </div>
     
@@ -61,6 +62,7 @@ export default {
   overflow: scroll;
   height: 100%;
 }
+*/
 .card {
   width: 25vw;
   height: 25vw;
@@ -83,5 +85,4 @@ export default {
     width: 50%;
   }
 }
-*/
 </style>
