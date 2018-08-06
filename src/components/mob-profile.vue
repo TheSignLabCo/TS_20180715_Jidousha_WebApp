@@ -87,6 +87,9 @@ export default {
     var appProfileToken = localStorage.getItem("autostudio-app-profile");
     if (appProfileToken) {
       this.isLogged = true;
+      this.name = localStorage.getItem("autostudio-app-name");
+      this.email = localStorage.getItem("autostudio-app-email");
+      this.photo = localStorage.getItem("autostudio-app-photo");
     } else {
       this.isLogged = false;
     }
@@ -101,11 +104,14 @@ export default {
       self.isLogged = true;
       FB.api("/me", dude => {
         self.name = dude.name;
+        localStorage.setItem("autostudio-name", self.name);
       });
       FB.api("/me", { fields: "email" }, function(response) {
         self.email = response.email;
         self.photo =
           "http://graph.facebook.com/" + response.id + "/picture?type=normal";
+        localStorage.setItem("autostudio-email", self.email);
+        localStorage.setItem("autostudio-photo", self.photo);
       });
     },
     onFSignInError(error) {
