@@ -1,6 +1,10 @@
 <template>
   <div class="device desktop" id="desktop-home">
-
+    <img src="/static/img/desktop/m1.png" width="100%">
+    <img src="/static/img/desktop/m2.png" width="100%">
+    <img src="/static/img/desktop/m3.png" width="100%">
+    <img src="/static/img/desktop/m4.png" width="100%">
+<!--
     <header class="header">
       <img  class="header-logo" src="" alt="">
       <ul class="header-menu">
@@ -54,18 +58,20 @@
     <footer class="footer">
       <div class="wrapper"></div>
     </footer>
+-->
+
 
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'vw-home-desktop'
-  }
+export default {
+  name: "vw-home-desktop"
+};
 </script>
 
 <style scoped>
-.wrapper{
+.wrapper {
   display: block;
   width: auto;
   max-width: 1100px;
