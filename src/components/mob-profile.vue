@@ -94,13 +94,16 @@ export default {
     },
     onFSignInSuccess(response) {
       var self = this;
+      localStorage.setItem("autostudio-app-profile", "profile");
+      self.isLogged = true;
       FB.api("/me", dude => {
-        localStorage.setItem("autostudio-app-profile", "profile");
-        self.isLogged = true;
         self.name = dude.name;
         console.log(dude);
       });
       FB.api("/me", { fields: "email" }, function(response) {
+        self.email = response.email;
+      });
+      FB.api("/me", { fields: "photo" }, function(response) {
         console.log(response);
       });
     },
