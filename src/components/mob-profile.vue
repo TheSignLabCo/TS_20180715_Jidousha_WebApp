@@ -3,6 +3,7 @@
 
     <div class="section login" v-if="!isLogged">
 
+      <h1>{{isLogged}}</h1>
       <img class="profile-default-icon" src="/static/img/mob-profile/login-profile-icon.png">
 
       <div class="login-button fb">
