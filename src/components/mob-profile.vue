@@ -98,8 +98,10 @@ export default {
         localStorage.setItem("autostudio-app-profile", "profile");
         self.isLogged = true;
         self.name = dude.name;
-        self.photo_url = dude.photo_url;
         console.log(dude);
+      });
+      FB.api("/me", { fields: "email" }, function(response) {
+        console.log(response);
       });
     },
     onFSignInError(error) {
