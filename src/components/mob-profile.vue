@@ -32,7 +32,7 @@
       <img :src="photo" class="profile">
       <h3 class="">Nombre : {{name}}</h3>
       <h3 class="">Email : {{email}}</h3>
-      <h3 class="">Photo : {{photo}}</h3>
+
       </div>
 
       <div class="bottom">
@@ -217,6 +217,7 @@ export default {
   h3 {
     text-align: center;
     max-width: 80;
+    font-family: "font-light";
   }
 }
 </style>
