@@ -3,7 +3,6 @@
 
     <div class="section login" v-if="!isLogged">
 
-      <h1>{{isLogged}}</h1>
       <img class="profile-default-icon" src="/static/img/mob-profile/login-profile-icon.png">
 
       <div class="login-button fb">
@@ -29,25 +28,25 @@
     </div>
     <div class="section profile" v-if="isLogged">
 
-      
-        <!--
-          <div class="top">
-        <img class="" src="">
-        <h3 class="">Nombre</h3>
+      <div class="top">
+      <img class="" v-bind:src="photo">
+      <h3 class="">Nombre : {{name}}</h3>
       </div>
+
       <div class="bottom">
         <ul class="services">
           <li class="service">
             <div class="service-header">
-              <span class="service-header-title">
+              <span class="service-header-title"></span>
               <img class="service-header-icon">
             </div>
-            <div class="service-content"></div>
+            <div class="service-content">
+
+            </div>
           </li>
         </ul>
       </div>
-      -->
-
+      
     </div>
     
   </div>
@@ -61,6 +60,8 @@ export default {
   data() {
     return {
       isLogged: false,
+      name: "",
+      photo: "",
       fbSignInParams: {
         scope: "email",
         return_scopes: true
@@ -94,9 +95,10 @@ export default {
     onFSignInSuccess(response) {
       var self = this;
       FB.api("/me", dude => {
-        console.log(`Good to see you, ${dude.name}.`);
         localStorage.setItem("autostudio-app-profile", "profile");
         self.isLogged = true;
+        self.name = dude.name;
+        self.photo_url = dude.photo_url;
       });
     },
     onFSignInError(error) {
